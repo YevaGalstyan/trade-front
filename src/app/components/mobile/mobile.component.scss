@@ -1,0 +1,72 @@
+.mobile_section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar_opened {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobile_header_section {
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid var(--addit-light-color);
+  background-color: var(--global-light-color);
+
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+.logo_icon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  span {
+    font-family: Cormorant;
+    font-weight: lighter;
+    font-size: 18px;
+    letter-spacing: 0.11em;
+    color: var(--global-dark-color);
+  }
+}
+
+.mobile_header_icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.general_header {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(242, 244, 245, 0.2);
+
+  .common_dropdown_cycle_mobile {
+    background: none;
+    border: 1px solid #8C8F90;
+  }
+
+  .common_dropdown_mobile_l, .common_dropdown_mobile {
+    backdrop-filter: blur(1px);
+    background-color: rgba(217, 217, 217, 0.2);
+    border: none;
+    color: #D9D9D9;
+  }
+}
+
+.mobile_body {
+  background-image: url(/assets/images/shared/logoBigDark.svg);
+  background-repeat: no-repeat;
+  background-position-x: calc(100% + 80px);
+  background-position-y: bottom;
+  background-size: 100%;
+}
+
+.mobile_body_wo_bg {
+  background-image: none;
+}

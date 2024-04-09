@@ -1,0 +1,78 @@
+<div class="user_section_payment">
+  <h1>{{localize.language.advancePayment}}</h1>
+  <div *ngIf="sharedService.userStatus; else deactivatedUser" class="user_account_menu"
+       (click)="sharedService.outerCloseDouble($event, dropdown1, dropdownIcon1, dropdown2, dropdownIcon2)">
+    <!--Advanced payments-->
+    <div class="advance_payment_info">
+      <span class="common_big_span_grey">{{localize.language.userAdvancePaymentInfo1}}</span>
+      <span class="common_small_span_grey">{{localize.language.userAdvancePaymentInfo2}}</span>
+    </div>
+
+    <div class="user_form_block" >
+      <div class="input_field_block" (click)="userService.resetErrorMessage()" [formGroup]="userService.userPaymentForm">
+
+        <div>
+          <button #dropdown1 class="common_select_field" (click)="desktopService.toggleDropdownFirst()">
+            {{id ? id : localize.language.invoice}}
+            <img #dropdownIcon1 [src]="sharedService.currentTheme ? 'assets/images/shared/ui-kit/downArrowDark.svg' :
+          'assets/images/shared/ui-kit/downArrowLight.svg'" alt="downArrow">
+          </button>
+          <span *ngIf="userService.userPaymentSubmitted && f.invoiceId.invalid" class="common_error_span position-absolute">
+          {{localize.language.invalidField}}
+        </span>
+          <ul class="common_select_dropdown" *ngIf="desktopService.dropdownStatusFirst">
+            <li (click)="chooseInvoiceId(id)" *ngFor="let id of invoiceIds">{{id}}</li>
+          </ul>
+        </div>
+
+        <div class="label_with_click_block">
+          <label class="common_label label_with_click">
+            <input class="common_input_field field_with_click" formControlName="amount" type="text" [placeholder]="localize.language.amount">
+            <span class="common_input_text">{{localize.language.amount}}</span>
+            <span class="common_input_button">USD</span>
+          </label>
+          <span *ngIf="userService.userPaymentSubmitted && f.amount.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+        </div>
+
+        <div>
+          <button #dropdown2 class="common_select_field" (click)="desktopService.toggleDropdownSecond()">
+            {{this.userService.periodTime ?  this.userService.periodTime : localize.language.period}}
+            <img #dropdownIcon2 [src]="sharedService.currentTheme ? 'assets/images/shared/ui-kit/downArrowDark.svg' :
+          'assets/images/shared/ui-kit/downArrowLight.svg'" alt="downArrow">
+          </button>
+          <span *ngIf="userService.userPaymentSubmitted && f.term.invalid" class="common_error_span position-absolute">
+          {{localize.language.invalidField}}
+        </span>
+          <ul class="common_select_dropdown" *ngIf="desktopService.dropdownStatusSecond">
+            <li (click)="chooseTerms(i + 1)" *ngFor="let day of [].constructor(14); let i = index">
+              {{i + 1 + ' ' + (i + 1 === 1 ? localize.language.day :
+              (i + 1 >= 2 && i + 1 <= 4 ? localize.language.days : localize.language.daysR))}}
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <button (click)="userService.finishPayment()" class="common_button dark_button fixed_mid_button">
+        {{localize.language.apply}}
+      </button>
+    </div>
+  </div>
+
+  <ng-template #deactivatedUser>
+    <div class="unverified_user">
+      <span class="common_big_span">{{localize.language.waitForVerification}}</span>
+    </div>
+  </ng-template>
+</div>
+
+<app-terms-and-conditions-popup
+  *ngIf="termsModalStatus"
+  [popupTitle]="'userTermsTitle'">
+</app-terms-and-conditions-popup>
+<app-common-small-popup
+  *ngIf="commonModalStatus"
+  [popupText]="'requestCreatedInfo'"
+  [popupTitle]="'requestCreated'">
+</app-common-small-popup>

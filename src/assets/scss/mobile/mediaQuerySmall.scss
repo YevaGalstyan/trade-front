@@ -1,0 +1,605 @@
+@media only screen and (max-width: 375px) {
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  .common_big_span_grey, .common_big_span {
+    font-size: 14px !important;
+  }
+
+  .header_section_info {
+    gap: 20px;
+  }
+
+  .general_block_header {
+    bottom: 40px;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    button {
+      width: 150px;
+      height: 150px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+  .about_us_upper_section {
+    gap: 30px;
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .about_us_lower_section {
+    padding-bottom: 100px;
+  }
+
+  .about_us_upper_info {
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .about_us_lower_item {
+    gap: 30px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .crypto_inner_section {
+    margin: 0 auto 100px;
+  }
+
+  .awards_title {
+    padding-bottom: 20px;
+  }
+
+  .awards_section {
+    margin: 100px 0 0;
+  }
+
+  .award_item_inner {
+    ul li {
+      font-size: 14px;
+    }
+  }
+
+  .award_item {
+    padding: 20px 15px
+  }
+
+  .availability_info {
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .availability_info_numbers {
+    gap: 46px;
+  }
+
+  .footer_menu_item {
+    padding: 40px 20px;
+
+    h1 {
+      font-size: 24px
+    }
+  }
+
+  .footer_menu_section {
+    margin-bottom: 50px;
+  }
+
+  .general_footer_section {
+
+    button {
+      margin: 10px auto 0;
+    }
+  }
+
+  .footer_rest {
+    padding-bottom: 40px;
+  }
+
+  .modal_dialog_section_qa {
+    .modal_dialog_block {
+      height: calc(100vh - 60px);
+      min-height: unset !important;
+      overflow: scroll !important;
+      width: calc(100% - 40px) !important;
+    }
+  }
+
+  .modal_dialog_body_qa {
+    padding: 30px 20px 90px !important;
+
+    form {
+      padding: 48px 0 50px !important;
+    }
+  }
+
+  .not_found_section {
+    padding-top: 116px;
+    gap: 40px;
+  }
+
+  .not_found_block {
+    gap: 30px;
+    padding-bottom: 100px;
+  }
+
+  .not_found_info {
+    h1 {
+      font-size: 32px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .small_button {
+    font-size: 14px !important;
+  }
+
+  .extra_small_button {
+    font-size: 14px !important;
+  }
+
+  .pin_info_header {
+    .common_big_span {
+      font-size: 18px !important;
+    }
+  }
+
+  .awards_button_section {
+
+    button {
+      font-size: 20px;
+    }
+  }
+
+  .details_section {
+    padding: 116px 0 0;
+  }
+
+  .award_header_section, .contacts_header_section, .details_header_section {
+    padding: 0 20px 40px;
+
+    h1 {
+      font-size: 32px;
+    }
+  }
+
+  .awards_item_block {
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .awards_body_section {
+    padding: 0 20px 100px;
+  }
+
+  .can_get_block {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .service_left_item {
+    height: 314px;
+  }
+
+  .service_right_item {
+    padding: 50px 20px 100px;
+    gap: 20px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .common_button {
+    padding: 21px 40px !important;
+    font-size: 14px !important;
+  }
+
+  .map_section_contact {
+    margin-bottom: 100px;
+  }
+
+  .golden_standard_section {
+    padding-top: 30px;
+  }
+
+  .golden_standard_info {
+    gap: 20px;
+  }
+
+  .golden_standard_block {
+    margin-bottom: 100px;
+  }
+
+  .company_heads_info {
+    h2 {
+      margin: 30px 0 20px;
+      font-size: 18px;
+    }
+  }
+
+  .our_history_header_section {
+    padding-bottom: 20px;
+  }
+
+  .company_heads_footer {
+    .common_big_span {
+      font-size: 16px !important;
+    }
+  }
+
+  .company_heads_section {
+    padding: 80px 20px 100px;
+  }
+
+  .our_history_section {
+    padding: 100px 20px 0 2px;
+    margin-bottom: 40px;
+  }
+
+  .our_history_body_section {
+    margin-top: 49px;
+  }
+
+  .our_history_info {
+    padding-bottom: 80px;
+  }
+
+  .our_history_right {
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .investment_ideas_item {
+    padding: 60px 0;
+    margin: 0 20px;
+    gap: 30px;
+  }
+
+  .can_get_item {
+    .common_big_span_red {
+      font-size: 16px;
+    }
+  }
+
+  .investment_ideas_left_buttons {
+    margin-top: 10px;
+  }
+
+  .footer_ideas {
+    margin-top: 40px;
+  }
+
+  .modal_dialog_header_i {
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .modal_dialog_body {
+    padding: 40px 20px 60px;
+
+    button {
+      margin: 20px auto 0;
+    }
+  }
+
+  .contact_info_section {
+    gap: 20px;
+  }
+
+  .login_register_section {
+    padding: 116px 20px 0;
+    gap: 15px;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .login_register_block {
+    padding: 20px 0 0;
+  }
+
+  .login_section {
+    margin-top: 26px;
+  }
+
+  .input_field_block {
+    gap: 40px;
+    margin-bottom: 40px !important;
+  }
+
+  .helping_links {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .modal_dialog_header {
+    gap: 40px;
+
+    span {
+      font-size: 18px !important;
+    }
+  }
+
+  .register_global_block {
+    gap: 40px;
+  }
+
+  .register_block {
+    padding: 60px 0 0;
+  }
+
+  .register_section {
+    h1 {
+      font-size: 24px;
+    }
+
+    .common_big_span_grey {
+      margin-top: 15px;
+    }
+  }
+
+  .common_select_dropdown {
+    left: 20px;
+    right: 20px;
+    width: unset !important;
+  }
+
+  .logo_first {
+    width: 165px;
+  }
+
+  .logo_second {
+    width: 278px;
+  }
+
+  .register_forth_block {
+    padding-top: 40px !important;
+  }
+
+  .upload_file_block {
+    width: 100%;
+    height: 200px;
+    padding: 0 35px;
+    gap: 5px;
+    margin: 0 0 20px;
+  }
+
+  .user_section, .user_section_payment {
+    gap: 15px;
+    padding: 80px 20px 0;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .user_account_overview {
+    margin-top: 35px;
+  }
+
+  .account_details {
+    margin-top: 40px;
+  }
+
+  .user_account_detail {
+    gap: 20px;
+  }
+
+  .top_up_section {
+    gap: 20px;
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .account_balance {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .transaction_table_header {
+    th {
+      font-size: 12px;
+    }
+  }
+
+  .transaction_table_body_item {
+    td {
+      font-size: 12px;
+    }
+  }
+
+  .no_data {
+    font-size: 14px !important;
+  }
+
+  .common_label:focus-within > .common_input_text,
+  .common_label:focus-within > .common_input_text_new,
+  .common_input_field:not(:placeholder-shown) + .common_input_text,
+  .common_input_field:not(:placeholder-shown) + .common_input_text_new {
+    font-size: 12px !important;
+  }
+
+  .common_select_field, .common_input_text, .common_input_text_new, .common_input_button {
+    font-size: 14px !important;
+  }
+
+  .transaction_history {
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  .common_input_field {
+    padding-bottom: 20px !important;
+  }
+
+  .modal_dialog_block {
+    height: 250px;
+  }
+
+  .modal_dialog_body_big {
+    padding: 40px 20px 60px;
+  }
+
+  .modal_dialog_body_big {
+    div {
+      gap: 10px;
+    }
+
+    .common_checkbox_block {
+      margin-top: 30px;
+    }
+  }
+
+  .user_documents_item {
+    margin-bottom: 50px;
+
+    img {
+      width: 30px;
+    }
+  }
+
+  .user_documents_section {
+    margin: 40px 20px 40px 0;
+  }
+
+  .user_menu_block {
+    font-size: 14px;
+  }
+
+  .trade_section {
+    padding: 116px 20px 0;
+  }
+
+  .trade_section_menu {
+    margin-top: 30px;
+  }
+
+  .trade_section_switcher {
+    margin-top: 40px;
+
+    .common_medium_span_grey {
+      padding-bottom: 15px;
+    }
+  }
+
+  .trade_span {
+    h5 {
+      font-size: 12px;
+    }
+
+    span {
+      font-size: 8px;
+    }
+  }
+
+  .trade_table_header {
+    th {
+      font-size: 12px;
+    }
+  }
+
+  .modal_dialog_upper {
+    padding: 15px;
+  }
+
+  .modal_item_title {
+    .common_big_span_bold {
+      font-size: 14px;
+    }
+
+    .common_extra_small_span_grey {
+      font-size: 10px;
+    }
+  }
+
+  .modal_dialog_body_menu {
+    margin: 0 15px;
+    font-size: 14px;
+
+    .common_medium_span {
+      font-size: 14px;
+    }
+  }
+
+  .modal_dialog_body_check, .modal_dialog_body_input, .modal_dialog_body_input_l {
+    margin: 0 15px;
+  }
+
+  .popup_button_group {
+    gap: 10px;
+    padding: 20px 15px 30px;
+  }
+
+  .trade_menu_border_item {
+    margin-top: 10px;
+  }
+
+  .trade_menu_popup {
+    font-size: 10px !important;
+  }
+
+  .trade_menu_popup_outer {
+    margin: 0 20px;
+  }
+
+  .trade_menu_popup:before {
+    width: 61px;
+    height: 27px;
+    left: 7px;
+    top: 8px;
+    transform: translateX(0);
+    transition: transform 400ms;
+  }
+
+  .menu_item_2:before {
+    transform: translateX(85px);
+    transition: transform 400ms linear;
+  }
+
+  .menu_item_3:before {
+    transform: translateX(147px);
+    transition: transform 400ms linear;
+  }
+
+  .menu_item_4:before {
+    transform: translateX(220px);
+    transition: transform 400ms linear;
+  }
+
+  .sidebar_menu_item {
+    font-size: 16px;
+  }
+
+  .contact_menu_item {
+    font-size: 18px;
+  }
+}

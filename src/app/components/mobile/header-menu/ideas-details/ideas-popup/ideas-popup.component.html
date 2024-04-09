@@ -1,0 +1,48 @@
+<div class="modal_dialog_section_i"
+     [ngClass]="sharedService.currentTheme ? 'light_mode' : 'dark_mode'"
+     (click)="closeModal($event)">
+  <div #innerModal class="modal_dialog_block_i">
+    <div class="modal_dialog_header_i">
+      <h2>{{detailsService.ideasDetail?.header}}</h2>
+      <img src="assets/images/shared/ui-kit/closeIconLight.svg" (click)="detailsService.closeIdeasPopup();"/>
+    </div>
+    <table class="ideas_table_block">
+      <tr class="ideas_table_header">
+        <th>{{localize.language.ticker}}</th>
+        <th>{{localize.language.possibleProfit}}</th>
+        <th>{{localize.language.canGetCurrentW}}</th>
+      </tr>
+      <tr class="ideas_table_body">
+        <td>{{detailsService.ideasDetail?.subName}}</td>
+        <td>{{detailsService.ideasDetail?.maxPercentage}}</td>
+        <td [ngClass]="detailsService.ideasDetail?.color === 'GREEN' ? 'common_big_span_green' : (detailsService.ideasDetail?.color === 'RED' ? 'common_big_span_red' : '')">
+          {{detailsService.ideasDetail?.currentPercentage}}
+        </td>
+      </tr>
+    </table>
+
+    <table class="ideas_table_block">
+      <tr class="ideas_table_header">
+        <th>{{localize.language.openingPrice}}</th>
+        <th>{{localize.language.targetPrice}}</th>
+        <th>{{localize.language.dealStatus}}</th>
+      </tr>
+      <tr class="ideas_table_body">
+        <td>{{detailsService.ideasDetail?.entryPrice}}</td>
+        <td>{{detailsService.ideasDetail?.targetPrice}}</td>
+        <td [ngClass]="detailsService.ideasDetail?.status == 1 ? 'common_big_span_green' : 'common_big_span_red'">
+          {{detailsService.ideasDetail?.status == 1 ? localize.language.open : localize.language.closed}}</td>
+      </tr>
+    </table>
+
+    <div class="modal_dialog_body">
+      <span class="common_big_span">{{localize.language.information}}</span>
+      <span class="common_small_span_grey">{{detailsService.ideasDetail?.text}}</span>
+      <button [disabled]="detailsService.ideasDetail?.status == 0"
+              [routerLink]="authToken ? '/trade/stocks' : '/welcome'" class="common_button dark_button">
+        {{localize.language.toInvest}}
+      </button>
+    </div>
+
+  </div>
+</div>

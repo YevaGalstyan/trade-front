@@ -1,0 +1,66 @@
+<div class="user_section">
+  <h1>{{localize.language.profileData}}</h1>
+  <div *ngIf="sharedService.userStatus; else deactivatedUser" class="user_account_menu">
+    <!--User profile-->
+    <span class="common_big_span">
+      <span class="common_big_span_grey">{{localize.language.userAccountInfo}} </span>
+      <span class="common_link" routerLink="/account/support">{{localize.language.userAccountInfoLink}}</span>
+    </span>
+    <div class="user_form_block disabled_pointer_events" style="padding: 90px 0 0">
+      <div class="user_account_block" [formGroup]="userService.userAccountForm">
+
+        <div class="input_field_block">
+
+          <label class="common_label">
+            <input readonly class="common_input_field" type="text" formControlName="fullName" [placeholder]="localize.language.fullName">
+            <span class="common_input_text">{{localize.language.fullName}}</span>
+          </label>
+
+          <label class="common_label">
+            <input readonly class="common_input_field" type="text" formControlName="phone" [placeholder]="localize.language.email">
+            <span class="common_input_text">{{localize.language.phone}}</span>
+          </label>
+
+          <label class="common_label">
+            <input readonly class="common_input_field" type="text" formControlName="country" [placeholder]="localize.language.country">
+            <span class="common_input_text">{{localize.language.country}}</span>
+          </label>
+
+        </div>
+
+        <div class="input_field_block">
+
+          <label class="common_label">
+            <input readonly class="common_input_field" type="text" formControlName="birthDate"
+                   [value]="f.birthDate.value | date: 'yyyy-MM-dd'"
+                   [placeholder]="localize.language.birthDateWF">
+            <span class="common_input_text">{{localize.language.birthDateWF}}</span>
+          </label>
+
+          <label class="common_label">
+            <input readonly class="common_input_field" type="text" formControlName="email" [placeholder]="localize.language.emailS">
+            <span class="common_input_text">{{localize.language.emailS}}</span>
+          </label>
+
+          <label class="common_label">
+            <input readonly class="common_input_field" type="text" formControlName="city" [placeholder]="localize.language.town">
+            <span class="common_input_text">{{localize.language.town}}</span>
+          </label>
+
+        </div>
+      </div>
+      <div class="input_field_block big_input_field" [formGroup]="userService.userAccountForm">
+        <label class="common_label">
+          <input readonly class="common_input_field" type="text" formControlName="address" [placeholder]="localize.language.address">
+          <span class="common_input_text">{{localize.language.address}}</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #deactivatedUser>
+    <div class="unverified_user">
+      <span class="common_big_span">{{localize.language.waitForVerification}}</span>
+    </div>
+  </ng-template>
+</div>

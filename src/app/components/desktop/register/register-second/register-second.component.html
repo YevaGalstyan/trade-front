@@ -1,0 +1,48 @@
+<div class="register_section">
+  <h1>{{localize.language.accountData}}</h1>
+  <span class="common_big_span_grey">{{localize.language.emailAddressAndPassword}}</span>
+
+  <div class="register_block">
+    <div class="input_field_block" [formGroup]="registerService.userRegisterForm">
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()" class="common_input_field" type="email" formControlName="email" [email]="true"
+               [placeholder]="localize.language.email">
+        <span class="common_input_text">{{localize.language.email}}</span>
+        <span *ngIf="registerService.secondStepSubmitted && f.email.invalid" class="common_error_span">
+          <span *ngIf="f.email.value; else invalidData">{{localize.language.invalidEmail}}</span>
+          <ng-template #invalidData>
+            <span>{{localize.language.invalidField}}</span>
+          </ng-template>
+        </span>
+        <span class="common_error_span" *ngIf="registerService.emailValidationErrorMessage">{{registerService.emailValidationErrorMessage}}</span>
+      </label>
+
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()" class="common_input_field" type="password" formControlName="password"
+               [placeholder]="localize.language.password">
+        <span class="common_input_text">{{localize.language.password}}</span>
+        <span *ngIf="registerService.secondStepSubmitted && f.password.invalid" class="common_error_span">
+          <span *ngIf="f.password.value; else invalidData">{{localize.language.invalidPassword}}</span>
+          <ng-template #invalidData>
+            <span>{{localize.language.invalidField}}</span>
+          </ng-template>
+        </span>
+      </label>
+
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()" class="common_input_field" type="password" formControlName="confirmPassword"
+               [placeholder]="localize.language.passwordAgain">
+        <span class="common_input_text">{{localize.language.passwordAgain}}</span>
+        <span *ngIf="registerService.secondStepSubmitted && registerService.userRegisterForm.invalid && f.password.valid && f.email.valid" class="common_error_span">
+          <span *ngIf="f.confirmPassword.value; else invalidData">{{localize.language.invalidConfirmPassword}}</span>
+          <ng-template #invalidData>
+            <span>{{localize.language.invalidField}}</span>
+          </ng-template>
+        </span>
+      </label>
+
+    </div>
+    <button (click)="registerService.finishSecondStep()"
+            class="common_button dark_button fixed_mid_button">{{localize.language.next}}</button>
+  </div>
+</div>

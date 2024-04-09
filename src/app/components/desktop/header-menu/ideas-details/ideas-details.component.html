@@ -1,0 +1,81 @@
+<div class="details_section" *ngIf="detailsService.ideasDetails">
+
+  <div class="details_header_section">
+    <div style="overflow: hidden">
+      <h1 data-aos="fade-up" data-aos-duration="500">{{localize.language.investmentIdeas}}</h1>
+    </div>
+  </div>
+
+  <div style="width: 1200px; display:flex; justify-content: space-between">
+    <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" class="under_line_awards_left"></div>
+    <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" class="under_line_awards_right"></div>
+  </div>
+
+  <div *ngFor="let details of detailsService.ideasDetails" data-aos-delay="400" data-aos-duration="500" data-aos="fade-in" class="investment_ideas_item">
+    <div class="investment_ideas_left">
+      <div class="investment_ideas_left_info">
+        <div style="overflow: hidden">
+          <h1>{{details.header}}</h1>
+        </div>
+        <span  class="common_big_span_grey">{{details.text}}</span>
+      </div>
+
+      <div class="investment_ideas_left_buttons">
+        <button [disabled]="details.status == 0" [routerLink]="authToken ? '/trade/stocks' : '/welcome'" class="common_button dark_button">{{localize.language.toInvest}}</button>
+        <button (click)="detailsService.getIdeaDetails(details.id)" class="common_button transparent_button">{{localize.language.more}}</button>
+      </div>
+    </div>
+
+    <div class="investment_ideas_right">
+      <div class="can_get_block">
+        <div>
+          <span class="common_small_span_grey">{{localize.language.canGetMax}}</span>
+          <h1>{{details.exitPoint}}</h1>
+        </div>
+
+        <div>
+          <span class="common_small_span_grey">{{localize.language.canGetCurrent}}</span>
+          <h1 [ngClass]="details.color === 'GREEN' ? 'common_big_span_green' : (details.color === 'RED' ? 'common_big_span_red' : '')">{{details.currentProfit}}</h1>
+        </div>
+      </div>
+
+      <div class="can_get_info">
+        <div class="can_get_info_item">
+          <div class="can_get_item">
+            <span class="common_small_span_grey">{{localize.language.status}}</span>
+            <span [ngClass]="details.status == 1 ? 'common_big_span_green' : 'common_big_span_red'">
+              {{details.status == 1 ? localize.language.open : localize.language.closed}}
+            </span>
+          </div>
+
+          <div class="can_get_item">
+            <span class="common_small_span_grey">{{localize.language.entryDate}}</span>
+            <span class="common_big_span">{{details.entryDate}}</span>
+          </div>
+
+          <div class="can_get_item">
+            <span class="common_small_span_grey">{{localize.language.term}}</span>
+            <span class="common_big_span">{{details.term}}</span>
+          </div>
+        </div>
+
+        <div class="can_get_info_item">
+          <div class="can_get_item">
+            <span class="common_small_span_grey">{{localize.language.deal}}</span>
+            <span class="common_big_span">{{details.action}}</span>
+          </div>
+
+          <div class="can_get_item">
+            <span class="common_small_span_grey">{{localize.language.closeDate}}</span>
+            <span class="common_big_span">{{details.closeDate ? details.closeDate : '-'}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <app-footer-links></app-footer-links>
+</div>
+
+<app-ideas-popup *ngIf="popupStatus"></app-ideas-popup>

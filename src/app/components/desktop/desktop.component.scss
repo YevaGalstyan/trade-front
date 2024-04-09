@@ -1,0 +1,21 @@
+.desktop_section {
+  width: 100%;
+  height: 100%;
+}
+
+.desktop_body {
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 20px);
+  background-position-y: bottom;
+  background-size: 40%;
+
+  background-image: url(/assets/images/shared/logoBigDark.svg);
+}
+
+.desktop_body_general {
+  width: 100%;
+  min-height: 100vh;
+  background-image: none;
+}

@@ -1,0 +1,40 @@
+.transaction_table_block {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.transaction_table_header {
+  th {
+    padding-bottom: 14px;
+    font-weight: 300;
+    color: #8C8F90;
+  }
+}
+
+.transaction_table_body_item {
+  td {
+    padding: 20px 0;
+    font-weight: 400;
+
+    color: #FFFFFF;
+
+    table-layout: fixed;
+    width: calc(100% / 3);
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+}
+
+.transaction_table_header, .transaction_table_body_item {
+  border-bottom: 1px solid #40454B;
+  text-align: left;
+}
+
+.currency_text {
+  font-weight: 400;
+  font-size: 10px;
+  margin-left: 5px;
+  text-transform: uppercase;
+}
+

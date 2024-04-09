@@ -1,0 +1,39 @@
+<div class="modal_dialog_section" (click)="closeModal($event)">
+
+  <div #innerModal class="modal_dialog_block_big">
+
+    <div class="modal_dialog_header">
+      <span>{{localize.language[popupTitle]}}</span>
+      <img (click)="desktopService.closeTermsModal()" src="assets/images/shared/ui-kit/closeIconDark.svg" alt="logo">
+    </div>
+
+    <div class="modal_dialog_body_big">
+      <div style="width: 1000px; display: flex; flex-direction: column; gap: 30px">
+        <div class="terms_conditions_info">
+          <span class="common_big_span_grey">{{localize.language.termsAndConditionsText1}}</span>
+          <span class="common_big_span_grey">{{localize.language.termsAndConditionsText2}}</span>
+          <span class="common_big_span_grey">{{localize.language.termsAndConditionsText3}}</span>
+          <span class="common_big_span_grey">{{localize.language.termsAndConditionsText4}}</span>
+          <span class="common_big_span_grey">{{localize.language.termsAndConditionsText5}}</span>
+          <span class="common_big_span_grey">{{localize.language.termsAndConditionsText6}}</span>
+          <span class="common_big_span_grey">{{localize.language.termsAndConditionsText7}}</span>
+        </div>
+        <span class="common_small_span_grey">{{localize.language.termsAndConditionsTextCapital}}</span>
+        <label class="common_checkbox_block" [formGroup]="userService.userPaymentForm">
+        <span class="common_small_span_grey"
+              [ngClass]="!f.agreeTerms.value && userService.userPaymentSubmittedPopup ? 'common_error_span' : ''">
+          {{localize.language.IAgree}}
+        </span>
+          <a class="common_small_span" target="_blank" href="assets/pdfs/Application_for_provision.pdf"
+                [ngClass]="!f.agreeTerms.value && userService.userPaymentSubmittedPopup ? 'common_error_span' : ''">
+          {{localize.language.withAdvancePayment}}
+        </a>
+          <input (click)="userService.sendAgreeConditions()" type="checkbox" formControlName="agreeTerms">
+          <span (click)="userService.termsConditionsDownload()"  class="common_checkbox" [ngClass]="!f.agreeTerms.value && userService.userPaymentSubmittedPopup ? 'common_checkbox_invalid' : ''"></span>
+        </label>
+      </div>
+
+      <button class="common_button dark_button" [disabled]="!f.agreeTerms.value" (click)="userService.finishPaymentRequest()">{{localize.language.confirm}}</button>
+    </div>
+  </div>
+</div>

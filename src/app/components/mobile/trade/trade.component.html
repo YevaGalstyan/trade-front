@@ -1,0 +1,45 @@
+<div class="trade_section">
+  <h1>{{localize.language.trade}}</h1>
+  <div class="trade_section_menu">
+    <div class="trade_section_item">
+      <div class="trade_section_menu_item">
+        <span class="common_small_span_grey">{{localize.language.accountBalance}}</span>
+        <h4>{{tradeService.paymentSettings?.balance | number : '1.2-2' | noComma}}
+          <span class="currency_text">{{tradeService.paymentSettings?.currency}}</span>
+        </h4>
+      </div>
+      <div class="trade_section_menu_item">
+        <span class="common_small_span_grey">{{localize.language.recourse}}</span>
+        <h4>{{tradeService.paymentSettings?.fund | number : '1.2-2' | noComma}}
+          <span class="currency_text">{{tradeService.paymentSettings?.currency}}</span>
+        </h4>
+      </div>
+    </div>
+
+    <div class="trade_section_item">
+      <div class="trade_section_menu_item">
+        <span class="common_small_span_grey">{{localize.language.profitMargin}}</span>
+        <h4>{{tradeService.paymentSettings?.marja | number : '1.2-2' | noComma}}
+          <span class="currency_text">{{tradeService.paymentSettings?.currency}}</span>
+        </h4>
+      </div>
+      <div class="trade_section_menu_item">
+        <span class="common_small_span_grey">{{localize.language.freeProfitMargin}}</span>
+        <h4>{{tradeService.paymentSettings?.freeMarja | number : '1.2-2' | noComma}}
+          <span class="currency_text">{{tradeService.paymentSettings?.currency}}</span>
+        </h4>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="trade_section_switcher">
+    <span class="common_medium_span_grey" routerLinkActive="active_trade_menu" routerLink="/trade/stocks">{{localize.language.stocks}}</span>
+    <span class="common_medium_span_grey" routerLinkActive="active_trade_menu" routerLink="/trade/portfolio">{{localize.language.portfolio}}</span>
+    <span class="common_medium_span_grey" routerLinkActive="active_trade_menu" routerLink="/trade/order">{{localize.language.order}}</span>
+    <span class="common_medium_span_grey" routerLinkActive="active_trade_menu" routerLink="/trade/history">{{localize.language.history}}</span>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
+

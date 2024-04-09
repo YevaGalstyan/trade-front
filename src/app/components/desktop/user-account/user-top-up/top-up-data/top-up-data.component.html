@@ -1,0 +1,19 @@
+<div class="transaction_table_block">
+  <table class="transaction_table_block">
+    <tr class="transaction_table_header">
+      <th>{{localize.language.cryptoCurrency}}</th>
+      <th>{{localize.language.address}}</th>
+    </tr>
+    <tr *ngFor="let item of userService.userCoinAddresses" class="transaction_table_body_item">
+      <td>{{item.coin}}</td>
+      <td class="coin_address">
+        <span>{{item.address}}</span>
+        <img *ngIf="!item.copiedToClipboard; else copiedImage" (click)="copyToClipboard(item)" ngxClipboard [cbContent]="item.address"
+             src="assets/images/shared/ui-kit/copyIconDark.svg">
+        <ng-template #copiedImage>
+          <img src="assets/images/shared/ui-kit/copyIconDarkGreen.svg">
+        </ng-template>
+      </td>
+    </tr>
+  </table>
+</div>

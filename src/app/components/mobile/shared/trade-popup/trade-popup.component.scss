@@ -1,0 +1,257 @@
+.modal_dialog_section {
+  width: 100vw;
+  height: 100vh;
+
+  padding-top: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(21, 24, 27, 0.7);
+}
+
+.modal_dialog_block {
+  width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+  height: fit-content;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  background-color: #1C1F23;
+}
+
+.modal_dialog_block_p {
+  min-height: unset;
+}
+
+.modal_dialog_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 27px 25px 28px;
+  border-bottom: 1px solid rgba(158, 166, 170, 0.3);
+
+  span {
+    font-weight: 400;
+    color: var(--global-dark-color);
+  }
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.modal_dialog_upper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(64, 69, 75, 1)
+}
+
+.modal_item_title {
+  display: flex;
+  flex-direction: column;
+  white-space: break-spaces;
+}
+
+.modal_item_amount {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: baseline;
+
+  h2 {
+    font-size: 16px;
+  }
+
+}
+
+.modal_item_graphic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.modal_dialog_body_m {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal_dialog_body_menu {
+  display: flex;
+  padding: 15px 0 20px;
+  justify-content: space-between;
+
+  color: var(--global-disabled-color);
+  cursor: pointer;
+  z-index: 2;
+
+  span {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  span:hover {
+    color: var(--global-dark-color);
+  }
+}
+
+.trade_menu_border {
+  height: 1px;
+  margin: -20px 20px 0;
+  background-color: var(--popup-border-color);
+}
+
+.trade_menu_border_item {
+  height: 1px;
+}
+
+.active_trade_border + .trade_menu_border_item {
+  background-color: var(--global-dark-color);
+}
+
+.modal_dialog_body_check {
+  display: flex;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: space-between;
+
+  .menu_item {
+    padding: 5px 10px;
+    border: 1px solid var(--popup-border-color);
+    border-radius: 5px;
+    cursor: pointer;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .menu_item:hover {
+    border: 1px solid var(--addit-dark-color);
+  }
+
+  .trade_input_field {
+    text-align: center;
+    direction: ltr;
+    width: calc(100% / 8);
+  }
+
+  .trade_input_field::placeholder {
+    text-align: center;
+  }
+}
+
+.modal_dialog_body_check_l {
+  margin: 0 20px 0;
+}
+
+.modal_dialog_body_input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal_dialog_body_input_l {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: none;
+}
+
+.border_item {
+  height: 100%;
+  width: 1px;
+  background-color: var(--popup-border-color);
+}
+
+.input_item {
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup_button_group {
+  display: flex;
+  justify-content: center;
+
+  button {
+    padding: 14px 21px;
+    font-size: 12px;
+    min-width: fit-content;
+  }
+}
+
+.popup_button_group_l {
+  button {
+    width: 244px;
+  }
+}
+
+.trade_menu_popup_outer {
+  padding: 15px 0;
+  border-bottom: 1px solid #40454B;
+}
+
+.trade_menu_popup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 43px;
+  padding: 0 13px;
+  justify-content: space-between;
+
+  &:before {
+    content: "";
+    background: var(--global-dark-color);
+    position: absolute;
+    border-radius: 5px;
+    z-index: 2;
+  }
+}
+
+.active_limit_menu_item {
+  color: #15181B;
+  transition: 400ms;
+}
+
+.trade_menu_popup_item {
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu_item_1 {
+  .trade_menu_popup_item:first-child {
+    color: var(--global-light-color);
+  }
+}
+
+.menu_item_2 {
+  .trade_menu_popup_item:nth-child(2) {
+    color: var(--global-light-color);
+  }
+}
+
+.menu_item_3 {
+  .trade_menu_popup_item:nth-child(3) {
+    color: var(--global-light-color);
+  }
+}
+
+.menu_item_4 {
+  .trade_menu_popup_item:last-child {
+    color: var(--global-light-color);
+  }
+}
+
+

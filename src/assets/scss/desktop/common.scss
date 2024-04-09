@@ -1,0 +1,49 @@
+// Common dropdown styles
+.common_dropdown {
+  position: fixed;
+  width: 40px;
+  height: 0;
+  top: 22px;
+
+  border-radius: 50px;
+  background-color: #191B1F;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.common_dropdown_cycle {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background-color: #15181b;
+  border: 1px solid #40454B;
+  color: var(--global-dark-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  cursor: pointer;
+}
+
+.common_dropdown_cycle:hover + .common_dropdown, .common_dropdown:hover {
+  height: 120px;
+  padding-bottom: 15px;
+  color: var(--global-disabled-color);
+
+  span:hover {
+    color: var(--global-dark-color);
+    cursor: pointer;
+  }
+}

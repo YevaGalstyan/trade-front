@@ -1,0 +1,855 @@
+.general_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.general_section_header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url("../../../../assets/images/shared/generalImage.svg");
+}
+
+.general_block_header {
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-weight: 400;
+    line-height: 80%;
+    font-family: Cormorant;
+    font-size: 88px;
+  }
+
+  a {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    background-color: #F2F4F5;
+    color: #15181B;
+
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Manrope-Light';
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a:hover {
+    background-color: rgba(69, 92, 233, 1);
+    color: #fff;
+  }
+}
+
+.header_section_g {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header_section_info {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 30px;
+
+  span {
+    width: 70%;
+    line-height: 145%;
+  }
+}
+
+.header_info {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    width: calc(100% / 2);
+  }
+}
+
+.general_section_body {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  span {
+    color: #F2F4F5;
+    max-width: 15%;
+    position: absolute;
+    font-size: 1vw;
+    top: 5%;
+    right: 16%;
+  }
+}
+
+.about_us_section {
+  padding: 150px 0;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about_us_upper_section {
+  display: flex;
+  justify-content: space-between;
+  gap: 151px;
+  border-bottom: 1px solid #D9D9D9;
+  padding-bottom: 80px;
+
+  h2 {
+    width: 700px;
+    color: #15181B;
+  }
+}
+
+.about_us_upper_info {
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  margin-bottom: 80px;
+
+  button {
+    max-width: 200px;
+  }
+
+  span {
+    color: #40454B;
+  }
+}
+
+.about_us_lower_section {
+  gap: 45px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.about_us_lower_item {
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  h2 {
+    color: #15181B;
+  }
+
+  span {
+    color: #40454B;
+  }
+}
+
+.about_us_lower_item_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 135%;
+}
+
+.crypto_section {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid var(--addit-light-color);
+}
+
+.crypto_inner_section {
+  margin: 0 auto 150px;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.crypto_inner_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    width: 60%;
+    color: #15181B;
+  }
+}
+
+.crypto_inner_text {
+  margin-top: 80px;
+  display: flex;
+  gap: 45px;
+}
+
+.crypto_inner_item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.crypto_inner_item_block {
+  width: calc(100%/3);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.crypto_inner_separator {
+  color: #B6B6B6;
+  font-weight: lighter;
+  font-size: 18px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.crypto_inner_item_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    color: #15181B;
+  }
+
+  span {
+    color: #40454B;
+  }
+}
+
+.awards_section {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin: 150px 0 50px;
+
+  button {
+    max-width: 280px;
+  }
+}
+
+.awards_button_section {
+  display: flex;
+  justify-content: center;
+
+  a {
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+.awards_count {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Manrope-Light';
+  color: #5F656B;
+}
+
+.awards_title {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #40454B;
+
+  a, span {
+    color: #9F9F9F;
+    text-transform: uppercase;
+  }
+}
+
+.awards_block_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 45px;
+}
+
+.award_item {
+  display: flex;
+  padding: 50px 40px 40px 50px;
+  height: 370px;
+  width: 370px;
+  flex-direction: column;
+  background-color: #1C1F23;
+
+  img {
+    width: 120px;
+  }
+
+  ul {
+    margin-top: 30px;
+    color: #D9D9D9;
+  }
+}
+
+.awards_footer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
+
+  span {
+    width: 100%;
+    font-family: 'Raleway-light';
+    text-transform: uppercase;
+    color: #8C8F90;
+    letter-spacing: 0.05em;
+  }
+}
+
+.availability_block {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  gap: 30px;
+}
+
+.availability_info {
+  display: flex;
+  gap: 45px;
+
+  h2 {
+    width: 785px;
+  }
+}
+
+.availability_info {
+  display: flex;
+}
+
+.availability_info_numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.availability_numbers_item {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+
+  h1 {
+    font-size: 64px;
+  }
+}
+
+
+// Map styles
+.map_section {
+  margin: 0 0 200px;
+}
+
+.map_section_contact {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.contact_info_section {
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  padding: 40px 0;
+  word-break: break-all;
+}
+
+.contact_info_block {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.map_block {
+  padding: 30px;
+  background-color: #15181B;
+  position: relative;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.map_block_contact {
+  display: flex;
+  margin-bottom: 120px;
+  background-color: #15181B;
+  position: relative;
+  border-radius: 5px;
+
+  img {
+    width: 770px;
+  }
+}
+
+.map_pins {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map_pin {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  background-color: rgba(242, 244, 245, 0.1);
+  cursor: pointer;
+  animation-delay: .1s;
+
+  &:after {
+    animation: pulsate 3s ease-in-out infinite;
+    background: transparent;
+    border: 2px solid rgba(242, 244, 245, 0.7);
+    border-radius: 30px;
+    content: "";
+    display: block;
+    height: 33px;
+    left: -5.5px;
+    opacity: 0.9;
+    position: absolute;
+    top: -5.5px;
+    transform: scale(1);
+    transition: all .3s linear;
+    width: 33px;
+    z-index: 2;
+  }
+}
+
+@keyframes pulsate {
+  0% {transform: scale(0.1); opacity: 0.9;}
+  100% {transform: scale(1); opacity: 0;}
+}
+
+.map_pin_inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(140, 143, 144, 1);
+}
+
+.pin_1 {
+  position: absolute;
+  top: 247px;
+  left: 176px;
+}
+
+.pin_2 {
+  position: absolute;
+  top: 164px;
+  left: 224px;
+}
+
+.pin_3 {
+  position: absolute;
+  top: 141px;
+  left: 307px;
+}
+
+.pin_3_contact {
+  position: absolute;
+  top: 30%;
+  left: 24%;
+}
+
+.pin_4 {
+  position: absolute;
+  top: 164px;
+  left: 331px;
+}
+
+.pin_4_contact {
+  position: absolute;
+  top: 33%;
+  left: 23%;
+}
+
+.pin_5 {
+  position: absolute;
+  top: 117px;
+  left: 545px;
+}
+
+.pin_5_contact {
+  position: absolute;
+  top: 30%;
+  left: 76%;
+}
+
+.pin_6 {
+  position: absolute;
+  top: 176px;
+  left: 545px;
+}
+
+.pin_6_contact {
+  position: absolute;
+  top: 13.5%;
+  left: 61.5%;
+}
+
+.pin_7 {
+  position: absolute;
+  top: 152px;
+  left: 568px;
+}
+
+.pin_7_contact {
+  position: absolute;
+  top: 23%;
+  left: 45%;
+}
+
+.pin_8 {
+  position: absolute;
+  top: 128px;
+  left: 592px;
+}
+
+.pin_9 {
+  position: absolute;
+  top: 152px;
+  left: 628px;
+}
+
+.pin_10 {
+  position: absolute;
+  top: 105px;
+  left: 699px;
+}
+
+.pin_11 {
+  position: absolute;
+  top: 211px;
+  left: 699px;
+}
+
+.pin_12 {
+  position: absolute;
+  top: 271px;
+  left: 841px;
+}
+
+.pin_13 {
+  position: absolute;
+  top: 331px;
+  left: 924px;
+}
+
+.pin_14 {
+  position: absolute;
+  top: 248px;
+  left: 972px;
+}
+
+.pin_15 {
+  position: absolute;
+  top: 224px;
+  left: 984px;
+}
+
+.pin_16 {
+  position: absolute;
+  top: 188px;
+  left: 996px;
+}
+
+.pin_17 {
+  position: absolute;
+  top: 474px;
+  left: 1079px;
+}
+
+.pin_info {
+  position: absolute;
+  width: 300px;
+  height: 179px;
+  display: flex;
+  flex-direction: column;
+  background-color: #1C1F23;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.pin_info_header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #40454B;
+
+  span {
+    color: #FFFFFF;
+  }
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.pin_info_body {
+  padding: 20px 45px 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .common_small_span {
+    color: #F2F4F5;
+    margin-bottom: 5px;
+  }
+}
+
+.pin_detail_1 {
+  position: absolute;
+  top: 260px;
+  left: 150px;
+}
+
+.pin_detail_2 {
+  position: absolute;
+  top: 170px;
+  left: 200px;
+}
+
+.pin_detail_3 {
+  position: absolute;
+  top: 180px;
+  left: 277px;
+}
+
+.pin_detail_4 {
+  position: absolute;
+  top: 201px;
+  left: 325px;
+}
+
+.pin_detail_5 {
+  position: absolute;
+  top: 120px;
+  left: 520px;
+}
+
+.pin_detail_6 {
+  position: absolute;
+  top: 190px;
+  left: 520px;
+}
+
+.pin_detail_7 {
+  position: absolute;
+  top: 160px;
+  left: 550px;
+}
+
+.pin_detail_8 {
+  position: absolute;
+  top: 130px;
+  left: 570px;
+}
+
+.pin_detail_9 {
+  position: absolute;
+  top: 160px;
+  left: 610px;
+}
+
+.pin_detail_10 {
+  position: absolute;
+  top: 110px;
+  left: 680px;
+}
+
+.pin_detail_11 {
+  position: absolute;
+  top: 220px;
+  left: 680px;
+}
+
+.pin_detail_12 {
+  position: absolute;
+  top: 290px;
+  left: 830px;
+}
+
+.pin_detail_13 {
+  position: absolute;
+  top: 350px;
+  left: 920px;
+}
+
+.pin_detail_14 {
+  position: absolute;
+  top: 260px;
+  left: 970px;
+}
+
+.pin_detail_15 {
+  position: absolute;
+  top: 240px;
+  left: 980px;
+}
+
+.pin_detail_16 {
+  position: absolute;
+  top: 200px;
+  left: 1000px;
+}
+
+.pin_detail_17 {
+  position: absolute;
+  top: 510px;
+  left: 980px;
+}
+
+.footer_menu_section {
+  margin-bottom: 60px;
+  width: 100%;
+  border-bottom: 1px solid #40454B;
+  border-top: 1px solid #40454B;
+}
+
+.footer_menu_inner_section {
+  width: 1200px;
+  margin: auto;
+  justify-content: space-between;
+  display: flex;
+}
+
+.footer_menu_item {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 0;
+
+  a, button {
+    max-width: fit-content;
+  }
+}
+
+.footer_menu_item:first-child {
+  margin-right: 80px;
+}
+
+.footer_menu_item:last-child {
+  margin-left: 80px;
+}
+
+.separator {
+  width: 1px;
+  background-color: #40454B;
+}
+
+.general_footer_section {
+  width: 1200px;
+  margin-bottom: 40px;
+}
+
+.footer_upper_section {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #40454B;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .common_small_span {
+    cursor: pointer;
+  }
+
+  .common_small_span:hover {
+    text-decoration: underline;
+  }
+}
+
+.all_right_reserved {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.not_found_section {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+}
+
+
+.not_found_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 200px;
+  gap: 50px;
+  border-bottom: 1px solid var(--addit-light-color);
+
+  button {
+    max-width: fit-content;
+  }
+}
+
+.not_found_info {
+  width: 519px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+
+
+  h1 {
+    font-size: 64px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .header_info {
+    //width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    span {
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header_section_g, .about_us_section, .crypto_inner_section, .awards_section,
+  .footer_menu_inner_section, .general_footer_section {
+    width: 90%;
+  }
+}
+
+.show_anim {
+  display: block;
+}
+
+.hide_anim {
+  display: none;
+}
+

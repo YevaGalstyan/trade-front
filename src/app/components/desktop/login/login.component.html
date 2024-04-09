@@ -1,0 +1,31 @@
+<div class="login_register_section">
+  <h1>{{localize.language.loginSystem}}</h1>
+  <span class="common_big_span_grey">{{localize.language.fillEmailAndPassword}}</span>
+
+  <div class="login_section">
+    <div (keyup.enter)="registerService.logInUser()"  class="input_field_block" [formGroup]="registerService.userLoginForm">
+      <label class="common_label" [style.margin-bottom]="registerService.loginErrorMessage ? '10px' : ''">
+        <input class="common_input_field" type="text" formControlName="email"
+               [placeholder]="localize.language.email">
+        <span class="common_input_text">{{localize.language.email}}</span>
+        <span class="common_error_span">{{registerService.loginErrorMessage}}</span>
+      </label>
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()" class="common_input_field" type="password" formControlName="password"
+               [placeholder]="localize.language.password">
+        <span class="common_input_text">{{localize.language.password}}</span>
+      </label>
+    </div>
+    <button (click)="registerService.logInUser()" class="common_button dark_button">{{localize.language.login}}</button>
+    <div class="helping_links">
+      <span (click)="desktopService.openCommonSmallModal()" class="common_link common_medium_span">{{localize.language.forgotPassword}}</span>
+      <span routerLink="/register" class="common_link common_medium_span">{{localize.language.toRegister}}</span>
+    </div>
+  </div>
+</div>
+
+<app-common-small-popup
+  *ngIf="commonModalStatus"
+  [popupText]="'toResetPassword'"
+  [popupTitle]="'passwordReset'">
+</app-common-small-popup>

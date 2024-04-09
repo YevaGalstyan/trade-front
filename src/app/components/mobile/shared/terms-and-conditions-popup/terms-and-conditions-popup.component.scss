@@ -1,0 +1,30 @@
+.modal_dialog_block_big {
+  width: calc(100vw - 40px);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  background-color: #1C1F23;
+}
+
+.modal_dialog_body_big {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 220px);
+  overflow-y: scroll;
+  gap: 30px;
+
+  word-break: break-all;
+
+  .common_checkbox_block {
+    .common_small_span:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.terms_conditions_info {
+  display: flex;
+  flex-direction: column;
+}

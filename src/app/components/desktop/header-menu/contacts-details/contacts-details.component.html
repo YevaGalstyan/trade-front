@@ -1,0 +1,61 @@
+<div class="details_section">
+  <div class="contacts_header_section">
+    <div style="overflow: hidden">
+      <h1>{{localize.language.contact}}</h1>
+    </div>
+  </div>
+
+  <div class="contacts_menu_section">
+    <div class="contacts_menu_block">
+      <a class="active_contact_item" routerLink="/contact/usa" routerLinkActive="active_contact_border">
+        <div style="overflow: hidden">
+          <h2 class="inactive_header" routerLinkActive="active_header">{{localize.language.usa}}</h2>
+        </div>
+      </a>
+
+      <a class="active_contact_item" routerLink="/contact/china" routerLinkActive="active_contact_border">
+        <div style="overflow: hidden">
+          <h2 class="inactive_header" routerLinkActive="active_header">{{localize.language.china}}</h2>
+        </div>
+      </a>
+
+      <a class="active_contact_item" routerLink="/contact/russia" routerLinkActive="active_contact_border">
+        <div style="overflow: hidden">
+          <h2 class="inactive_header" routerLinkActive="active_header">{{localize.language.russia}}</h2>
+        </div>
+      </a>
+
+      <a class="active_contact_item" routerLink="/contact/uk" routerLinkActive="active_contact_border">
+        <div style="overflow: hidden">
+          <h2 class="inactive_header" routerLinkActive="active_header">{{localize.language.uk}}</h2>
+        </div>
+      </a>
+    </div>
+    <div class="contact_menu_border"></div>
+    <div class="contact_details">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="footer_menu_section">
+    <div class="footer_menu_inner_section">
+      <div class="footer_menu_item">
+        <div style="overflow:hidden;">
+          <h1>{{localize.language.openAccountText}}</h1>
+        </div>
+        <button class="small_button dark_button" routerLink="/account">{{localize.language.openAccount}}</button>
+      </div>
+      <div class="separator"></div>
+      <div class="footer_menu_item">
+        <div style="overflow:hidden;">
+          <h1>{{localize.language.leftQuestionsText}}</h1>
+        </div>
+        <button (click)="desktopService.openQAModal()" class="small_button transparent_button">{{localize.language.leftQuestions}}</button>
+      </div>
+    </div>
+  </div>
+
+  <app-footer-links></app-footer-links>
+</div>
+
+<app-qa-popup *ngIf="qaModalStatus"></app-qa-popup>

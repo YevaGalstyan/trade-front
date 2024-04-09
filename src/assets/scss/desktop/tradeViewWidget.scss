@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: #536390;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+  --color: black;
+}
+
+[data-theme="dark"] {
+  --primary-color: rgb(107, 106, 134);
+  --secondary-color: #818cab;
+  --font-color: #e1e1ff;
+  --bg-color: #fff;
+  --heading-color: #63656d;
+  --color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+h1 {
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--primary-color);
+}

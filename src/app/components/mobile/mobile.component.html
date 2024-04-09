@@ -1,0 +1,39 @@
+<div class="mobile_section" [ngClass]="sideBarStatus ? 'sidebar_opened' : ''">
+  <div id="mobileHeader" class="mobile_header_section">
+    <div class="logo_icon">
+      <img src="assets/images/mobile/general/logoMobile.svg" (click)="headerService.closeSideBar()" alt="logo" routerLink="/general">
+    </div>
+
+    <div class="mobile_header_icons">
+      <div class="language_section" id="language_section">
+        <div class="common_dropdown_cycle_mobile" (click)="headerService.openLanguageDrpDwn()">{{localize.language[sharedService.currentLanguage]}}</div>
+        <div class="common_dropdown_mobile common_dropdown_mobile_l" *ngIf="headerService.languageStatus">
+          <span (click)="headerService.changeLanguage(localize.firstLanguage)">{{localize.language[localize.firstLanguage]}}</span>
+          <span (click)="headerService.changeLanguage(localize.secondLanguage)">{{localize.language[localize.secondLanguage]}}</span>
+        </div>
+      </div>
+
+      <div class="user_block" id="user_section">
+        <div *ngIf="!headerService.userName else logOut" class="common_dropdown_cycle_mobile" (click)="headerService.userIcon()">
+          <img src="assets/images/mobile/general/userIconLightMobile.svg" alt="user">
+        </div>
+        <ng-template #logOut>
+          <div class="common_dropdown_cycle_mobile" (click)="headerService.openLogOut()">
+            <img src="assets/images/mobile/general/userIconLightMobile.svg" alt="user">
+          </div>
+        </ng-template>
+        <div *ngIf="headerService.logOutStatus" class="common_dropdown_mobile">
+          <div (click)="registerService.logOutUser()" class="user_log_out_mobile"></div>
+        </div>
+      </div>
+
+      <img (click)="headerService.openSideBar()"
+           src="assets/images/shared/ui-kit/menuIconLightGeneral.svg" alt="logo">
+    </div>
+  </div>
+  <div class="mobile_body" [ngClass]="mobileService.removeMobileBg ? 'mobile_body_wo_bg' : ''">
+    <router-outlet (activate)="onActivate()"></router-outlet>
+  </div>
+</div>
+
+<app-side-bar *ngIf="sideBarStatus"></app-side-bar>

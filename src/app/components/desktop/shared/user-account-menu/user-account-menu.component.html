@@ -1,0 +1,9 @@
+<div class="user_menu_section">
+  <div class="user_menu_block">
+    <div class="user_menu_item" *ngFor="let data of menuData; let i = index">
+      <span [routerLink]="data.routerLink"
+      routerLinkActive="common_big_span_bold">{{localize.language[data.title]}}</span>
+      <div class="menu_separator" *ngIf="i === 1 || i === 4"></div>
+    </div>
+  </div>
+</div>

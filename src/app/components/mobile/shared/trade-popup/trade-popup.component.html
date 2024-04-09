@@ -1,0 +1,111 @@
+<div class="modal_dialog_section" *ngIf="!forTradePortfolio; else forPortfolio" (click)="closeModal($event)">
+  <div #innerModal class="modal_dialog_block">
+    <div class="modal_dialog_header">
+      <span>{{localize.language.openDeal}}</span>
+      <img (click)="tradeService.closeTradeModal()" src="assets/images/shared/ui-kit/closeIconDark.svg" alt="logo">
+    </div>
+
+    <div class="modal_dialog_body_m">
+      <div class="modal_dialog_upper">
+        <div class="modal_item_title">
+          <span class="common_big_span_bold">{{tradeService.tradeModalData?.symbol}}</span>
+          <span class="common_extra_small_span_grey">{{tradeService.tradeModalData?.name}}</span>
+        </div>
+        <div class="modal_item_amount">
+          <h2>{{tradeService.tradeModalData?.symbolDetail?.price | number : '1.2-2' | noComma}}
+            <span class="common_extra_small_span_grey">
+              {{tradeService.tradeModalData?.symbolDetail?.currency}}
+            </span>
+          </h2>
+          <span [ngClass]="tradeService.tradeModalData?.symbolDetail?.change > 0 ? 'common_big_span_green' :
+          (tradeService.tradeModalData?.symbolDetail?.change == 0 ? 'common_medium_span' : 'common_big_span_red')">
+            {{tradeService.tradeModalData?.symbolDetail?.change | number : '1.2-2' | noComma}}
+
+            <span [ngClass]="tradeService.tradeModalData?.symbolDetail?.percent_change > 0 ? 'common_big_span_green' :
+          (tradeService.tradeModalData?.symbolDetail?.percent_change == 0 ? 'common_medium_span' : 'common_big_span_red')">
+              ({{(tradeService.tradeModalData?.symbolDetail?.percent_change | number : '1.2-2' | noComma) + '%'}})
+            </span>
+            </span>
+        </div>
+
+        <div class="modal_item_graphic" (click)="tradeService.goToSymbolGraphic(tradeService.tradeModalData, true)">
+          <span class="common_extra_small_span">{{localize.language.graphic}}</span>
+          <img [src]="sharedService.currentTheme ? 'assets/images/shared/ui-kit/graphicDark.svg' : 'assets/images/shared/ui-kit/graphicLight.svg'"/>
+        </div>
+      </div>
+
+      <div class="modal_dialog_body_menu">
+        <div (click)="tradeService.changeTradeType(1)" style="width: 40%; display: flex; flex-direction: column;">
+          <span [ngClass]="f.value === commonEnum.market ? 'common_medium_span active_trade_border' : ''">{{localize.language.market}}</span>
+          <div class="trade_menu_border_item"></div>
+        </div>
+        <div (click)="tradeService.changeTradeType(2)" style="width: 40%; display: flex; flex-direction: column;">
+          <span [ngClass]="f.value === commonEnum.limit ? 'common_medium_span active_trade_border' : ''">{{localize.language.limit}}</span>
+          <div class="trade_menu_border_item"></div>
+        </div>
+      </div>
+      <div class="trade_menu_border"></div>
+
+      <app-market-popup *ngIf="f.value === commonEnum.market"></app-market-popup>
+      <app-limit-popup *ngIf="f.value === commonEnum.limit"></app-limit-popup>
+    </div>
+  </div>
+</div>
+
+<!--Trade Portfolio popup-->
+<ng-template #forPortfolio>
+  <div class="modal_dialog_section" (click)="closeModal($event)">
+    <div #innerModal class="modal_dialog_block modal_dialog_block_p">
+      <div class="modal_dialog_header">
+        <span>{{localize.language.positionChange}}</span>
+        <img (click)="tradeService.closeTradeModal()" src="assets/images/shared/ui-kit/closeIconDark.svg" alt="logo">
+      </div>
+
+      <div class="modal_dialog_body_m" [formGroup]="tradeService.buyOrSellChangeForm">
+        <div class="modal_dialog_upper">
+          <div class="modal_item_title">
+            <span class="common_big_span_bold">{{tradeService.tradeModalData?.symbolName}}</span>
+            <span class="common_extra_small_span_grey">{{tradeService.tradeModalData?.name}}</span>
+          </div>
+          <div class="modal_item_amount">
+            <h2>{{tradeService.tradeModalData?.symbolDetail?.price | number : '1.2-2' | noComma}}<span class="common_extra_small_span_grey">USD</span></h2>
+
+            <span [ngClass]="tradeService.tradeModalData?.symbolDetail?.change > 0 ? 'common_big_span_green' :
+          (tradeService.tradeModalData?.symbolDetail?.change == 0 ? 'common_medium_span' : 'common_big_span_red')">
+            {{tradeService.tradeModalData?.symbolDetail?.change | number : '1.2-2' | noComma}}
+
+              <span [ngClass]="tradeService.tradeModalData?.symbolDetail?.percent_change > 0 ? 'common_big_span_green' :
+          (tradeService.tradeModalData?.symbolDetail?.percent_change == 0 ? 'common_medium_span' : 'common_big_span_red')">
+              ({{(tradeService.tradeModalData?.symbolDetail?.percent_change | number : '1.2-2' | noComma) + '%'}})
+            </span>
+            </span>
+
+          </div>
+          <div class="modal_item_graphic" (click)="tradeService.goToSymbolGraphic(tradeService.tradeModalData, false)">
+            <span style="color: #FFFFFF" class="common_extra_small_span">{{localize.language.graphic}}</span>
+            <img src="assets/images/shared/ui-kit/graphicLight.svg"/>
+          </div>
+        </div>
+        <div class="modal_dialog_body_input" style="border-bottom: 1px solid rgba(64, 69, 75, 1);">
+          <div class="input_item">
+            <span class="common_small_span">{{localize.language.stopLoss}}</span>
+            <input class="trade_input_field" maxlength="7" formControlName="bottomLimit"
+                   (keypress)="tradeService.checkInputValue($event)" [placeholder]="localize.language.noPrice"/>
+          </div>
+        </div>
+        <div class="modal_dialog_body_input" style="border-bottom: 1px solid rgba(64, 69, 75, 1);">
+          <div class="input_item">
+            <span class="common_small_span">{{localize.language.takeProfit}}</span>
+            <input class="trade_input_field" maxlength="7" formControlName="topLimit"
+                   (keypress)="tradeService.checkInputValue($event)" [placeholder]="localize.language.noPrice"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup_button_group">
+        <button class="dark_button trade_button" (click)="tradeService.changeTradePortfolio(false)">{{localize.language.positionChanging}}</button>
+        <button class="transparent_button trade_button" (click)="tradeService.changeTradePortfolio(true)">{{localize.language.closePosition}}</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

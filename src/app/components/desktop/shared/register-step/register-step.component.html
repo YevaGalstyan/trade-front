@@ -1,0 +1,21 @@
+<div class="register_step_block" *ngFor="let data of stepsData">
+  <div>
+    <div class="step_item">
+      <div class="step_cycle" [ngClass]="{'current_step' : currentStep >= data.stepCount}">{{data.stepCount}}</div>
+      <span class="common_big_span_grey" [ngClass]="{'current_step_text' : currentStep >= data.stepCount}">{{localize.language[data.title]}}</span>
+    </div>
+
+    <div *ngIf="data.finalStepConfigs" [ngClass]="{'current_step' : currentStep >= data.stepCount}" class="inner_lines"></div>
+  </div>
+</div>
+
+<div *ngIf="currentStep === 5" class="register_step_block">
+  <div class="inner_lines current_step"></div>
+  <div>
+    <div class="step_item">
+      <div class="step_cycle current_step">5</div>
+      <span class="common_big_span">{{localize.language.dataCheck}}</span>
+    </div>
+  </div>
+</div>
+

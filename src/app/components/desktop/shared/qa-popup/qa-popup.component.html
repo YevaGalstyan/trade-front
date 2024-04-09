@@ -1,0 +1,45 @@
+<div *ngIf="!mobileService.isMobile" class="modal_dialog_section modal_dialog_section_qa" (click)="closeModal($event)">
+  <div #innerModal class="modal_dialog_block">
+    <div class="modal_dialog_header">
+      <span>{{localize.language.leftQuestions}}</span>
+      <img (click)="desktopService.closeQAModal()" src="assets/images/shared/ui-kit/closeIconDark.svg" alt="logo">
+    </div>
+    <div class="modal_dialog_body_qa">
+      <span class="common_big_span_grey">{{localize.language.yourQuestion}}</span>
+      <form [formGroup]="qaForm">
+        <label class="common_label">
+          <input (input)="resetErrorMessage()" class="common_input_field" formControlName="fullName" type="text"
+                 [placeholder]="localize.language.fullName">
+          <span class="common_input_text">{{localize.language.fullName}}</span>
+          <span *ngIf="submitted && f.fullName.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+        </label>
+
+        <label class="common_label">
+          <input (input)="resetErrorMessage()" class="common_input_field" formControlName="phoneNumber" type="text"
+                 [placeholder]="localize.language.phone">
+          <span class="common_input_text">{{localize.language.phone}}</span>
+          <span *ngIf="submitted && f.fullName.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+        </label>
+
+        <label class="common_label">
+          <textarea rows="2" (input)="resetErrorMessage()" class="common_input_field" type="text" formControlName="question"
+                    [placeholder]="localize.language.inquiry">
+          </textarea>
+          <span class="common_input_text">{{localize.language.inquiry}}</span>
+          <span *ngIf="submitted && f.question.invalid" class="common_error_span">
+            <span>{{localize.language.invalidField}}</span>
+          </span>
+        </label>
+      </form>
+
+      <button class="common_button dark_button" (click)="submitQuestion()">{{localize.language.send}}</button>
+      <span *ngIf="submitted && popupSubmittingError" class="common_error_span">
+        <span>{{popupSubmittingError}}</span>
+      </span>
+    </div>
+  </div>
+</div>

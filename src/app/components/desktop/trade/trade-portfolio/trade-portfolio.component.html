@@ -1,0 +1,13 @@
+<app-trade-table [displayedData]="tradeService.myTransactionData"></app-trade-table>
+
+<app-trade-popup
+  *ngIf="tradeModalStatus"
+  [forTradePortfolio]="true">
+</app-trade-popup>
+
+<app-common-small-popup
+  *ngIf="commonModalStatus"
+  [forTrade]="true"
+  [popupText]="tradeService.tradePortfolioPopupText"
+  [popupTitle]="tradeService.tradePortfolioPopupHeader">
+</app-common-small-popup>

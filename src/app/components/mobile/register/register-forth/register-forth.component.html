@@ -1,0 +1,38 @@
+<div class="register_section register_forth_section">
+  <h1>{{localize.language.authentication}}</h1>
+  <span class="common_big_span_grey">{{localize.language.uploadPassportPhoto}}</span>
+
+  <div class="register_block register_forth_block" [formGroup]="registerService.userRegisterForm">
+    <div>
+      <input type="file" id="upload" hidden
+             (change)="registerService.addPassport($event)"/>
+      <label for="upload" [ngClass]="{'uploaded_image' : registerService.passwordImg}" class="upload_file_block">
+        <span class="common_big_span_bold">{{localize.language.uploadFile}}</span>
+        <span class="common_small_span_grey">{{localize.language.fileSizeForUpload}}</span>
+        <span *ngIf="registerService.forthStepSubmitted && registerService.passwordImg.length !==2" class="common_error_span">
+          {{localize.language.uploadTwoPhotos}}
+      </span>
+        <span class="common_error_span" *ngIf="registerService.passportUploadSizeErrorMessage">
+        {{localize.language.passportFileSizeError}}
+      </span>
+        <span class="common_error_span" *ngIf="registerService.passportUploadTypeErrorMessage">
+        {{localize.language.passportFileTypeError}}
+      </span>
+      </label>
+    </div>
+
+    <div class="uploaded_files">
+      <div *ngFor="let image of registerService.passwordImg; let i = index" class="uploaded_item_block">
+        <div class="uploaded_item">
+          <div style="width:100%; display: flex; justify-content: flex-end">
+            <img style="cursor: pointer" height="9px" src="assets/images/shared/ui-kit/closeIconDark.svg" (click)="registerService.removeFile(i)">
+          </div>
+          <img width="23px" src="assets/images/shared/ui-kit/copyIcon.svg"/>
+        </div>
+        <span class="common_extra_small_span_grey">{{image.name.substring(0, 7) + '...'}}</span>
+      </div>
+    </div>
+    <button (click)="registerService.finishForthStep()"
+            class="common_button dark_button fixed_mid_button">{{localize.language.next}}</button>
+  </div>
+</div>

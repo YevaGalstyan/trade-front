@@ -1,0 +1,21 @@
+<div class="user_section">
+  <h1>{{localize.language.documents}}</h1>
+  <div *ngIf="sharedService.userStatus; else deactivatedUser" class="user_account_menu">
+    <!--User top up-->
+    <span class="common_big_span_grey">{{userService.userDocuments?.length ? localize.language.documentsText : localize.language.noAvailableDocs}}</span>
+
+    <div class="user_documents_section">
+      <div class="user_documents_item" *ngFor="let document of userService.userDocuments" (click)="userService.getUserDocument(document.fileId, document.name)">
+        <img width="60px" [src]="sharedService.currentTheme ?
+           'assets/images/shared/ui-kit/documentIconDark.svg' : 'assets/images/shared/ui-kit/documentIconLight.svg'" alt="logo">
+        <span class="common_small_span">{{document.name}}</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #deactivatedUser>
+    <div class="unverified_user">
+      <span class="common_big_span">{{localize.language.waitForVerification}}</span>
+    </div>
+  </ng-template>
+</div>

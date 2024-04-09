@@ -1,0 +1,227 @@
+<div class="general_section">
+  <div class="general_section_header">
+    <div class="general_block_header">
+      <div class="header_section_g">
+        <div class="header_section_info">
+          <div>
+            <div style="overflow-y: hidden">
+              <img width="402" data-aos="fade-up" data-aos-duration="500" src="assets/images/shared/generalPage/logoFirst.svg"/>
+            </div>
+            <div style="overflow-y: hidden">
+              <img width="675" data-aos="fade-up" data-aos-duration="500" src="assets/images/shared/generalPage/logoSecond.svg"/>
+            </div>
+          </div>
+          <div style="width: 620px" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+            <span class="common_big_span">{{localize.language.investmentText}}</span>
+            <span class="common_big_span">{{localize.language.clientText}}</span>
+          </div>
+        </div>
+        <a data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500"
+           [routerLink]="this.authToken ? '/account' : '/welcome'">{{localize.language.openAccount}}</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="background-color: #fff; width: 100%; display: flex; justify-content: center">
+    <div class="about_us_section">
+      <div class="about_us_upper_section">
+        <h2 data-aos="fade-in" data-aos-duration="500">{{localize.language.aboutUs}}</h2>
+        <div class="about_us_upper_info">
+          <span data-aos="fade-in" class="common_big_span_grey">{{localize.language.aboutUsInfo}}</span>
+          <a data-aos="fade-in" class="common_big_span_grey" style="text-decoration: underline; cursor: pointer" routerLink="/company">{{localize.language.more}}</a>
+        </div>
+      </div>
+
+      <div class="about_us_lower_section">
+        <div class="about_us_lower_item">
+          <img width="80px" style="transform: rotate(90deg)" src="assets/images/shared/ui-kit/generalInnerCircleLight.gif" alt="logo">
+          <div class="about_us_lower_item_info">
+            <div style="overflow:hidden;">
+              <h2 data-aos="fade-in" data-aos-duration="500">{{localize.language.lowCosts}}</h2>
+            </div>
+            <span data-aos="fade-in" data-aos-duration="500" class="common_big_span_grey">{{localize.language.lowCostsText}}</span>
+          </div>
+        </div>
+
+        <div class="about_us_lower_item">
+          <img width="80px" src="assets/images/shared/ui-kit/generalDownArrowLight.gif" alt="logo">
+          <div class="about_us_lower_item_info">
+            <div style="overflow:hidden;">
+              <h2 data-aos="fade-in" data-aos-duration="500">{{localize.language.globalAccess}}</h2>
+            </div>
+            <span data-aos="fade-in" data-aos-duration="500" class="common_big_span_grey">{{localize.language.globalAccessText}}</span>
+          </div>
+        </div>
+
+        <div style="gap:46px" class="about_us_lower_item">
+          <img width="120px" src="assets/images/shared/ui-kit/generalCircleLight.gif" alt="logo">
+          <div class="about_us_lower_item_info">
+            <div style="overflow:hidden;">
+              <h2 data-aos="fade-in" data-aos-duration="500">{{localize.language.tools}}</h2>
+            </div>
+            <span data-aos="fade-in" data-aos-duration="500" class="common_big_span_grey">{{localize.language.toolsText}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="crypto_section">
+    <div class="crypto_inner_section">
+      <div style="overflow: hidden">
+        <img data-aos="zoom-out-left" data-aos-duration="500" [src]="screenWidth > 1590 ? 'assets/images/shared/generalCrypto.svg' : 'assets/images/shared/generalCryptoSmall.svg'"/>
+      </div>
+      <div class="crypto_inner_info">
+
+        <div style="overflow: hidden">
+          <h1 data-aos="fade-up" data-aos-duration="500">{{localize.language.withCrypto}}</h1>
+        </div>
+
+        <div style="overflow: hidden">
+          <h1 data-aos="fade-up" data-aos-duration="500">{{localize.language.whatProfit}}</h1>
+        </div>
+
+
+        <div class="crypto_inner_text">
+          <div data-aos="fade-in" data-aos-duration="500" data-aos-delay="300" class="crypto_inner_item_block">
+            <div data-aos="fade-in" class="crypto_inner_separator">01</div>
+            <div class="crypto_inner_item_info">
+              <div style="overflow: hidden">
+                <h2>{{localize.language.highSpeed}}</h2>
+              </div>
+              <span class="common_big_span_grey">{{localize.language.highSpeedText}}</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-in" data-aos-duration="500" data-aos-delay="800" class="crypto_inner_item_block">
+            <div class="crypto_inner_separator">02</div>
+            <div class="crypto_inner_item_info">
+              <div style="overflow: hidden">
+                <h2>{{localize.language.withoutRestrictions}}</h2>
+              </div>
+              <span class="common_big_span_grey">{{localize.language.withoutRestrictionsText}}</span>
+            </div>
+          </div>
+
+          <div data-aos="fade-in" data-aos-duration="500" data-aos-delay="1300" class="crypto_inner_item_block">
+            <div class="crypto_inner_separator">03</div>
+            <div class="crypto_inner_item_info">
+              <div style="overflow: hidden">
+                <h2>{{localize.language.safety}}</h2>
+              </div>
+              <span class="common_big_span_grey">{{localize.language.safetyText}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="awards_section">
+    <div class="awards_title" style="overflow: hidden">
+      <div>
+        <a routerLink="/awards" class="common_medium_span">{{localize.language.awards}}</a>
+      </div>
+    </div>
+    <div class="awards_block_item">
+      <div class="award_item">
+        <img src="assets/images/shared/awards/awardsDetailed/awards20221.svg" alt="logo">
+        <ul>
+          <li>{{localize.language.awards20221textLi1}}</li>
+          <li>{{localize.language.awards20221textLi2}}</li>
+          <li>{{localize.language.awards20221textLi3}}</li>
+        </ul>
+
+        <div class="awards_footer">
+          <span class="common_small_span_grey">{{localize.language.barrons}}</span>
+          <span class="common_small_span_grey">2022</span>
+        </div>
+      </div>
+
+      <div class="award_item">
+        <img src="assets/images/shared/awards/awardsDetailed/awards20222.svg" alt="logo">
+        <ul>
+          <li>{{localize.language.awards20223}}</li>
+        </ul>
+
+        <div class="awards_footer">
+          <span class="common_small_span_grey">{{localize.language.investopedia}}</span>
+          <span class="common_small_span_grey">2022</span>
+        </div>
+      </div>
+
+      <div class="award_item">
+        <img src="assets/images/shared/awards/awardsDetailed/awards20224.svg" alt="logo">
+        <ul>
+          <li>{{localize.language.awards20224textLi1}}</li>
+          <li>{{localize.language.awards20224textLi3}}</li>
+        </ul>
+
+        <div class="awards_footer">
+          <span class="common_small_span_grey">{{localize.language.brokerchooser}}</span>
+          <span class="common_small_span_grey">2022</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="awards_button_section">
+      <a class="common_button transparent_button" routerLink="/awards">{{localize.language.allAwards}}
+        <span class="awards_count">24</span>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="awards_section">
+    <div class="awards_title" style="overflow: hidden">
+      <div>
+        <span class="common_medium_span">{{localize.language.availabilities}}</span>
+      </div>
+    </div>
+    <div class="availability_block">
+      <div class="availability_info">
+        <h2>{{localize.language.investmentTextNew}}</h2>
+
+        <div class="availability_info_numbers">
+          <div class="availability_numbers_item">
+            <h1>150</h1>
+            <span class="common_big_span">{{localize.language.markets}}</span>
+          </div>
+
+          <div class="availability_numbers_item">
+            <h1>33</h1>
+            <span class="common_big_span">{{localize.language.countries}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map_section">
+      <app-map></app-map>
+    </div>
+  </div>
+
+  <div class="footer_menu_section">
+    <div class="footer_menu_inner_section">
+      <div class="footer_menu_item">
+        <div style="overflow:hidden;">
+          <h1>{{localize.language.openAccountText}}</h1>
+        </div>
+        <a class="small_button dark_button" routerLink="/account">{{localize.language.openAccount}}</a>
+      </div>
+      <div class="separator"></div>
+      <div class="footer_menu_item">
+        <div style="overflow:hidden;">
+          <h1>{{localize.language.leftQuestionsText}}</h1>
+        </div>
+        <button (click)="desktopService.openQAModal()" class="small_button transparent_button">{{localize.language.leftQuestions}}</button>
+      </div>
+    </div>
+  </div>
+
+  <app-footer-links></app-footer-links>
+</div>
+
+<app-qa-popup *ngIf="qaModalStatus"></app-qa-popup>
+

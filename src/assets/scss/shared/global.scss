@@ -1,0 +1,66 @@
+// Light/dark mode styles
+body {
+  --global-light-color: #F2F4F5;
+  --addit-light-color: #DCDDDE;
+  --global-disabled-color: #8C8F90;
+  --addit-dark-color: #262A2F;
+  --global-dark-color: #15181B;
+  --language-dropdown-color: #E6EBEE;
+  --global-dark-color-shade: #262B2F;
+  --global-error-color: #BD2735;
+  --table-border-color: #DCDDDE;
+  --table-header-color: #8C8F90;
+  --table-cell-color: #15181B;
+  --green-color: #448B2A;
+  --table-hover-color: #F9F9F9;
+  --popup-border-color: #DCDDDE;
+}
+
+body.dark-theme {
+  --global-light-color: #15181B;
+  --addit-light-color: #262A2F;
+  --global-disabled-color: #8C8F90;
+  --addit-dark-color: #DCDDDE;
+  --global-dark-color: #F2F4F5;
+  --language-dropdown-color: #191B1F;
+  --global-dark-color-shade: #E6EBEE;
+  --global-error-color: #BD2735;
+  --table-border-color: #595959;
+  --table-header-color: #DCDDDE;
+  --table-cell-color: #ffffff;
+  --green-color: #0BB06D;
+  --table-hover-color: #191B1F;
+  --popup-border-color: #9EA6AA4D;
+}
+
+// Initial styles
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, span, p, button {
+  letter-spacing: 0.05em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  resize: none;
+}
+

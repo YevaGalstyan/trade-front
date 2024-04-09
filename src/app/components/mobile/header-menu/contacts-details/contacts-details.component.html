@@ -1,0 +1,33 @@
+<div class="details_section">
+  <div class="contacts_header_section">
+    <h1>{{localize.language.contact}}</h1>
+  </div>
+
+  <div class="contacts_menu_section">
+    <div class="contacts_menu_block">
+      <div style="width: fit-content; display: flex; gap: 30px">
+        <div class="contact_menu_item" *ngFor="let data of menuData; let i = index">
+      <span style="width: max-content" [routerLink]="data.routerLink"
+            routerLinkActive="active_contacts_item">{{localize.language[data.title]}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact_details">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="footer_menu_section">
+    <div class="footer_menu_inner_section">
+      <div class="footer_menu_item">
+        <h1>{{localize.language.openAccountText}}</h1>
+        <button class="small_button dark_button" routerLink="/account">{{localize.language.openAccount}}</button>
+      </div>
+    </div>
+  </div>
+
+  <app-footer-links></app-footer-links>
+</div>
+
+
+

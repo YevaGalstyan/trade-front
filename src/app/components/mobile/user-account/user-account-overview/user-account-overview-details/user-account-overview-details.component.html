@@ -1,0 +1,12 @@
+<div class="user_menu_item">
+  <div style="display: flex; flex-direction: column; width: 100%">
+    <div class="user_account_detail">
+      <div class="account_balance">
+        <span class="common_small_span_grey">{{localize.language.accountBalance}}</span>
+        <h1>{{tradeService.paymentSettings?.balance}}</h1>
+      </div>
+      <button class="extra_small_button transparent_button" (click)="userService.userTradingPopup()" >{{localize.language.trade}}</button>
+    </div>
+    <app-history-table></app-history-table>
+  </div>
+</div>

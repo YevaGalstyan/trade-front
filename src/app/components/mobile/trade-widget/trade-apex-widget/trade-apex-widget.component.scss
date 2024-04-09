@@ -1,0 +1,33 @@
+.apex_chart_block {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 90px;
+  background-color: #15181B;
+}
+
+::ng-deep .apexcharts-canvas {
+  .apexcharts-zoomin-icon, .apexcharts-zoomout-icon,
+  .apexcharts-zoom-icon, .apexcharts-pan-icon,
+  .apexcharts-reset-icon, .apexcharts-menu-icon {
+    width: unset;
+    height: unset;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .apexcharts-title-text {
+    margin-left: 10px;
+    fill: #fff;
+    font-size: 18px;
+  }
+
+  .apexcharts-xaxis-label, .apexcharts-yaxis-label {
+    fill: #8C8F90;
+  }
+
+  .apexcharts-toolbar {
+    max-width: unset;
+    padding: 0;
+  }
+}
+

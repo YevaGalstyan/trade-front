@@ -1,0 +1,349 @@
+@media only screen and (max-width: 1580px) {
+  h1 {
+    font-size: 32px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  h3 {
+    font-size: 40px !important;
+  }
+
+  h4 {
+    font-size: 22px !important;
+  }
+
+  .common_big_span, .common_big_span_green,
+  .common_big_span_red, .common_big_span_grey,
+  .common_big_span_bold {
+    font-size: 16px !important;
+  }
+
+  .availability_numbers_item {
+    .common_big_span {
+      font-size: 18px !important;
+    }
+  }
+
+  .general_block_header {
+    bottom: 100px !important;
+  }
+
+  .header_section_info {
+    gap: 20px !important;
+  }
+
+  .about_us_section {
+    padding: 100px 0 70px !important;
+  }
+
+  .about_us_lower_section {
+    padding-bottom: 30px !important;
+    margin-top: 50px !important;
+  }
+
+  .about_us_lower_item {
+    gap: 30px !important;
+
+    img {
+      width: 70px;
+    }
+  }
+
+  .about_us_lower_item_info {
+    gap: 10px !important;
+  }
+
+  .crypto_inner_section {
+    img {
+      height: 365px;
+    }
+  }
+
+  .about_us_lower_item:last-of-type {
+    img {
+      width: 110px;
+    }
+  }
+
+  .crypto_inner_section {
+    gap: 60px !important;
+    margin: 0 auto 100px !important;
+  }
+
+  .crypto_inner_text {
+    margin-top: 50px !important;
+  }
+
+  .crypto_inner_item_block {
+    gap: 30px !important;
+  }
+
+  .crypto_inner_item_info {
+    gap: 10px !important;
+  }
+
+  .awards_section {
+    margin: 100px 0 20px !important;
+  }
+
+  .awards_button_section {
+    margin-top: -10px;
+  }
+
+  .availability_block {
+    padding-bottom: 0 !important;
+  }
+
+  .footer_menu_item {
+    margin-right: 118px !important;
+    gap: 40px !important;
+  }
+
+  .footer_upper_section {
+    padding-bottom: 20px !important;
+  }
+
+  .golden_standard_section {
+    margin-bottom: 60px;
+    margin-top: 50px !important;
+  }
+
+  .golden_standard_block {
+    gap: 60px !important;
+  }
+
+  .company_heads_section {
+    padding: 120px 0 !important;
+  }
+
+  .company_heads_info {
+    h1 {
+      margin: 30px 0 20px !important;
+    }
+  }
+
+  .our_history_section {
+    padding: 120px 0 !important;
+  }
+
+  .our_history_left, .award_header_section,
+  .details_header_section, .availability_numbers_item,
+  .service_right_item, .contacts_header_section,
+  .not_found_info {
+    h1 {
+      font-size: 56px !important;
+    }
+  }
+
+  .investment_ideas_left_info {
+    gap: 20px !important;
+  }
+
+  .can_get_block {
+    padding-bottom: 30px !important;
+  }
+
+  .investment_ideas_right {
+    gap: 20px !important;
+  }
+
+  .can_get_info_item {
+    gap: 20px !important;
+  }
+
+  .modal_dialog_header_i, .modal_dialog_header {
+    padding: 20px 30px !important;
+  }
+
+  .modal_dialog_body_n {
+    padding: 30px 30px 60px !important;
+  }
+
+  .our_history_right {
+    margin-top: 80px !important;
+  }
+
+  .our_history_left {
+    margin-top: 65px !important;
+  }
+
+  .our_history_left_2017 {
+    margin-bottom: 330px;
+  }
+
+  .our_history_left_2020 {
+    margin-bottom: 220px;
+  }
+
+  .our_history_left_2021 {
+    margin-bottom: 120px;
+  }
+
+  .award_header_section {
+    padding-bottom: 60px !important;
+  }
+
+  .awards_item_block {
+    margin-top: 50px !important;
+  }
+
+  .awards_section_d {
+    padding-bottom: 120px;
+  }
+
+  .service_right_item {
+    padding: 200px 0 0 80px;
+    gap: 20px;
+  }
+
+  .service_right_item a {
+    margin-top: 10px;
+  }
+
+  .details_header_section {
+    padding-bottom: 60px !important;
+  }
+
+  .investment_ideas_item {
+    margin: 0;
+    padding: 50px 0;
+  }
+
+  .investment_ideas_item:last-of-type {
+    margin-bottom: 60px;
+    padding-bottom: 120px;
+  }
+
+  .contacts_header_section {
+    padding-bottom: 60px !important;
+  }
+
+  .inactive_header {
+    font-size: 32px !important;
+  }
+
+  .active_contact_item {
+    padding: 0 20px 20px;
+  }
+
+  .contact_info_section {
+    gap: 30px !important;
+  }
+
+  .map_section {
+    margin: 0 0 70px !important;
+  }
+
+  .map_section_contact {
+    margin-bottom: 0 !important;
+  }
+
+  .contact_details {
+    margin-top: 50px !important;
+  }
+
+  .not_found_info {
+    width: 540px !important;
+    gap: 20px !important;
+  }
+
+  .not_found_block {
+    gap: 30px !important;
+    padding-bottom: 120px !important;
+  }
+
+  .not_found_section {
+    padding-top: 200px !important;
+  }
+
+  .login_section {
+    padding: 40px 0 0;
+  }
+
+  .input_field_block {
+    margin-bottom: 50px;
+    gap: 45px !important;
+  }
+
+  .helping_links {
+    margin-top: 20px;
+  }
+
+  .modal_dialog_header span {
+    font-size: 22px !important;
+  }
+
+  .register_block {
+    padding: 40px 0 0 !important;
+  }
+
+  .common_input_text, .common_input_text_new {
+    font-size: 16px !important;
+  }
+
+  .common_input_field {
+    padding-bottom: 20px !important;
+  }
+
+  .user_menu_item {
+    font-size: 16px !important;
+  }
+
+  .user_section {
+    margin-top: 30px !important;
+    padding: 120px 0 0 40px;
+  }
+
+  .transaction_history {
+    margin: 50px 0 30px;
+  }
+
+  .trade_section_switcher {
+    margin-top: 80px;
+  }
+
+  .service_left_item {
+    height: 700px;
+  }
+
+  .inner_lines {
+    height: 20px !important;
+  }
+
+
+  .line_1 {
+    height: 355px;
+  }
+
+  .line_2 {
+    height: 375px;
+  }
+
+  .line_3 {
+    height: 375px;
+  }
+
+  .line_4 {
+    height: 255px;
+  }
+
+  .line_5 {
+    height: 139px;
+  }
+
+  .our_history_right_1, .our_history_right_2, .our_history_right_3 {
+    margin-bottom: 100px;
+  }
+
+  .our_history_left_2014 {
+    margin-bottom: 210px;
+  }
+
+  .our_history_left_2019 {
+    margin-bottom: 330px;
+  }
+
+}

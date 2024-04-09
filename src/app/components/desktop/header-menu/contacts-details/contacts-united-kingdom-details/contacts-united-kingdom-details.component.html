@@ -1,0 +1,21 @@
+<div class="map_section_contact">
+  <div class="map_block_contact">
+    <img [src]="sharedService.currentTheme ?
+           'assets/images/shared/mapDarkSmall.svg' : 'assets/images/shared/mapDarkSmall.svg'" alt="logo">
+    <div class="map_pins">
+      <div class="map_pin pin_7_contact"><div class="map_pin_inner"></div></div>
+    </div>
+  </div>
+
+  <div class="contact_info_section">
+    <div class="contact_info_block" *ngFor="let contact of companyService.currentCountryContacts">
+      <div style="overflow:hidden;">
+        <h2>{{contact.city}}</h2>
+      </div>
+      <div class="contact_info">
+        <span class="common_big_span_grey">{{contact.phone ? localize.language.phone + ': ' + contact.phone : ''}}</span>
+        <span class="common_big_span_grey">{{contact.email}}</span>
+      </div>
+    </div>
+  </div>
+</div>

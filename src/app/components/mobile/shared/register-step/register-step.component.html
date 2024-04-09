@@ -1,0 +1,20 @@
+<div style="display: flex">
+  <div class="register_step_block" *ngFor="let data of stepsData">
+    <div class="step_item">
+      <div class="step_cycle" [ngClass]="{'current_step' : currentStep >= data.stepCount}">{{data.stepCount}}</div>
+    </div>
+
+    <div *ngIf="data.finalStepConfigs" [ngClass]="{'current_step' : currentStep >= data.stepCount}" class="inner_lines"></div>
+  </div>
+
+  <div *ngIf="currentStep === 5" class="register_step_block">
+    <div class="inner_lines current_step"></div>
+    <div>
+      <div class="step_item">
+        <div class="step_cycle current_step">5</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

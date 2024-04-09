@@ -1,0 +1,60 @@
+<div class="register_section" (click)="sharedService.outerClose($event, dropdown)">
+  <h1>{{localize.language.personalData}}</h1>
+
+  <div class="register_block">
+    <div class="input_field_block" [formGroup]="registerService.userRegisterForm">
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()" class="common_input_field" formControlName="fullName" type="text"
+               [placeholder]="localize.language.fullName">
+        <span class="common_input_text">{{localize.language.fullName}}</span>
+        <span *ngIf="registerService.firstStepSubmitted && f.fullName.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+      </label>
+
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()" class="common_input_field" [validation]="true"
+               [leadZeroDateTime]="true"
+               [specialCharacters]="[ '/' ]" [dropSpecialCharacters]="false"
+               mask="d0/M0/0000" type="text" formControlName="birthDate"
+               [placeholder]="localize.language.birthDate">
+        <span class="common_input_text">{{localize.language.birthDate}}</span>
+        <span *ngIf="registerService.firstStepSubmitted && f.birthDate.invalid" class="common_error_span">
+          <span *ngIf="f.birthDate.value; else invalidData">{{localize.language.invalidBirthDate}}</span>
+          <ng-template #invalidData>
+            <span>{{localize.language.invalidField}}</span>
+          </ng-template>
+        </span>
+      </label>
+
+      <div (click)="registerService.resetErrorMessage()">
+        <div #dropdown class="common_select_field">
+          <input class="dropdown_input" [placeholder]="localize.language.citizenship" formControlName="citizenship"
+                 (input)="registerService.showCitizenShips()">
+        </div>
+        <span *ngIf="registerService.firstStepSubmitted && f.citizenship.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+        <span *ngIf="registerService.firstStepSubmitted && f.citizenship.valid && !registerService.validCitizenShip" class="common_error_span">
+          {{localize.language.validCitizenship}}
+        </span>
+        <ul class="common_select_dropdown" *ngIf="desktopService.dropdownStatusFirst">
+          <li (click)="chooseCitizenship(citizenShip)" *ngFor="let citizenShip of registerService.citizenShipsList">{{citizenShip}}</li>
+        </ul>
+      </div>
+
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()" class="common_input_field" type="text" formControlName="passportNumber"
+               [placeholder]="localize.language.passportData">
+        <span class="common_input_text">{{localize.language.passportData}}</span>
+        <span *ngIf="registerService.firstStepSubmitted && f.passportNumber.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+      </label>
+    </div>
+    <button (click)="registerService.finishFirstStep()"
+            class="common_button dark_button fixed_mid_button">
+      {{localize.language.next}}
+    </button>
+  </div>
+</div>

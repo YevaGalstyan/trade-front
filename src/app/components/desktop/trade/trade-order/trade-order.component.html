@@ -1,0 +1,51 @@
+<div class="trade_table_section">
+  <table class="trade_table_block">
+    <tr class="trade_table_header">
+      <th>{{localize.language.ticker}}</th>
+      <th>{{localize.language.parameter}}</th>
+      <th>{{localize.language.volume}}</th>
+      <th>{{localize.language.openingPrice}}</th>
+      <th>{{localize.language.takeProfit}}</th>
+      <th>{{localize.language.stopLoss}}</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let item of tradeService.myOrderData" class="trade_history_table_body_item">
+      <td class="trade_span">
+        <h5>{{item?.symbol}}</h5>
+        <span style="color: #8C8F90">{{item?.symbolName}}</span>
+      </td>
+
+      <td [ngSwitch]="item?.actionType" [ngClass]="item?.actionType === commonEnum.buyLimit || item?.actionType === commonEnum.buyStop ? 'common_big_span_green' :
+      (item?.actionType === commonEnum.sellLimit || item?.actionType === commonEnum.sellStop ? 'common_big_span_red' : '')">
+        <ng-container *ngSwitchCase="commonEnum.buyLimit">{{localize.language.buyLimit}}</ng-container>
+        <ng-container *ngSwitchCase="commonEnum.buyStop">{{localize.language.buyStop}}</ng-container>
+        <ng-container *ngSwitchCase="commonEnum.sellLimit">{{localize.language.sellLimit}}</ng-container>
+        <ng-container *ngSwitchCase="commonEnum.sellStop">{{localize.language.sellStop}}</ng-container>
+        <ng-container *ngSwitchDefault>{{item?.actionType}}</ng-container>
+      </td>
+
+      <td>{{item?.count}}</td>
+      <td>{{item?.actionPrice | number : '1.2-2' | noComma}}</td>
+      <td>{{item?.topLimit | number : '1.2-2' | noComma}}</td>
+      <td>{{item?.bottomLimit | number : '1.2-2' | noComma}}</td>
+      <td><img src="assets/images/shared/ui-kit/closeIconLight.svg" (click)="tradeService.openOrderPopup(item?.id)"></td>
+    </tr>
+  </table>
+  <div class="display_more" (click)="addPaginationTransaction()" *ngIf="tradeService.myOrderLength && !tradeService.removePagination">
+    <span class="common_medium_span">{{localize.language.loadMore}}</span>
+  </div>
+  <div class="no_data_trade" *ngIf="!tradeService.myOrderLength">
+    <span class="common_big_span_grey">{{localize.language.noData}}</span>
+  </div>
+</div>
+
+<app-common-small-popup
+  *ngIf="commonModalStatus"
+  [forOrder]="true"
+  [popupText]="this.tradeService.orderPopupText"
+  [popupTitle]="'closingOrder'">
+  <div class="order_popup_details" *ngIf="tradeService.currentOrderId">
+    <button class="common_button dark_button" (click)="tradeService.closeOrder()">{{localize.language.yes}}</button>
+    <button class="common_button transparent_button" (click)="desktopService.closeCommonSmallModal()">{{localize.language.no}}</button>
+  </div>
+</app-common-small-popup>

@@ -1,0 +1,12 @@
+<div class="apex_chart_block">
+  <div id="chart">
+    <apx-chart *ngIf="tradeService.chartOptions"
+      [series]="tradeService.chartOptions.series"
+      [chart]="tradeService.chartOptions.chart"
+      [xaxis]="tradeService.chartOptions.xaxis"
+      [yaxis]="tradeService.chartOptions.yaxis"
+      [title]="tradeService.chartOptions.title"
+    ></apx-chart>
+  </div>
+</div>
+

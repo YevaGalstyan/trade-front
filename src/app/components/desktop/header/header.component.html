@@ -1,0 +1,51 @@
+<div class="header_section" id="desktopHeader">
+
+  <div class="header_block">
+    <a class="logo_block" routerLink="/general">
+      <img [src]="sharedService.currentTheme ?
+    'assets/images/shared/logoDark.svg' : 'assets/images/shared/logoLight.svg'" alt="logo">
+    </a>
+
+    <div class="menu_block">
+      <a routerLink="/company" routerLinkActive="common_active_span" class="common_medium_span">{{localize.language.company}}</a>
+      <a routerLink="/awards" routerLinkActive="common_active_span" class="common_medium_span">{{localize.language.awards}}</a>
+      <a routerLink="/services" routerLinkActive="common_active_span" class="common_medium_span">{{localize.language.services}}</a>
+      <a routerLink="/ideas" routerLinkActive="common_active_span" class="common_medium_span">{{localize.language.ideas}}</a>
+      <a routerLink="/contact" routerLinkActive="common_active_span" class="common_medium_span">{{localize.language.contact}}</a>
+    </div>
+
+<!--    <div *ngIf="authToken" class="trade_block">-->
+<!--      <button class="extra_small_button transparent_button" (click)="userService.userTradingPopup()">{{localize.language.trade}}</button>-->
+<!--    </div>-->
+
+    <div class="user_settings_block">
+      <div class="language_block">
+        <div class="common_dropdown_cycle">{{localize.language[sharedService.currentLanguage]}}</div>
+        <div class="common_dropdown">
+          <span (click)="headerService.changeLanguage(localize.firstLanguage)">{{localize.language[localize.firstLanguage]}}</span>
+          <span (click)="headerService.changeLanguage(localize.secondLanguage)">{{localize.language[localize.secondLanguage]}}</span>
+        </div>
+      </div>
+
+      <div class="user_block">
+        <a class="common_dropdown_cycle" [routerLink]="headerService.userStatus ? '/account' : '/welcome'">
+          <img src="assets/images/shared/ui-kit/userIconDark.svg" alt="user">
+        </a>
+        <div *ngIf="authToken" class="common_dropdown user_dropdown">
+          <div (click)="registerService.logOutUser()" class="user_log_out"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--  <div class="theme_block" [ngClass]="!headerService.userStatus ? 'theme_block_flex' : ''">-->
+    <!--    <div class="general_switch_box">-->
+    <!--      <label class="general_switch">-->
+    <!--        <input [checked]="!sharedService.currentTheme" type="checkbox" (click)="headerService.switchThemes()">-->
+    <!--        <span class="general_slider"></span>-->
+    <!--      </label>-->
+    <!--    </div>-->
+    <!--  </div>-->
+
+  </div>
+
+</div>

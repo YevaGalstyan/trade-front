@@ -1,0 +1,26 @@
+<div class="register_section">
+  <h1>{{localize.language.emailVerification}}</h1>
+  <span class="common_big_span_grey">{{localize.language.verificationCodeText}}</span>
+
+  <div class="register_block">
+    <div class="input_field_block" [formGroup]="registerService.userRegisterForm">
+      <div class="label_with_click_block">
+        <label class="common_label label_with_click">
+          <input (input)="registerService.resetErrorMessage()" class="common_input_field field_with_click" type="text" formControlName="verificationCode"
+                 [placeholder]="localize.language.userName">
+          <span class="common_input_text">{{localize.language.verificationCode}}</span>
+          <span class="common_input_button" (click)="registerService.getVerificationCode()">{{localize.language.getCode}}</span>
+        </label>
+        <span class="common_small_span_grey" *ngIf="registerService.thirdStepVerificationCode">{{localize.language.verificationCodeIsSent}}</span>
+        <span *ngIf="registerService.thirdStepSubmitted && f.verificationCode.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+        <span *ngIf="registerService.verificationCodeErrorMessage" class="common_error_span">
+          {{registerService.verificationCodeErrorMessage}}
+        </span>
+      </div>
+    </div>
+    <button (click)="registerService.finishThirdStep()"
+            class="common_button dark_button fixed_mid_button">{{localize.language.next}}</button>
+  </div>
+</div>

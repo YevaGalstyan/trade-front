@@ -1,0 +1,43 @@
+<div  [formGroup]="tradeService.buyOrSellManualForm">
+  <div class="modal_dialog_body_check">
+    <div style="display: flex; gap: 20px">
+      <div class="menu_item" (click)="tradeService.changeCount(0.1, 'minus', tradeService.buyOrSellManualForm)">
+        <span class="common_big_span">-0.1</span>
+      </div>
+      <div class="menu_item" (click)="tradeService.changeCount(0.01, 'minus', tradeService.buyOrSellManualForm)">
+        <span class="common_big_span">-0.01</span>
+      </div>
+    </div>
+
+    <input class="trade_input_field" formControlName="count" placeholder="0.90"/>
+
+    <div style="display: flex; gap: 20px">
+      <div class="menu_item" (click)="tradeService.changeCount(0.01, 'plus', tradeService.buyOrSellManualForm)">
+        <span class="common_big_span">+0.01</span>
+      </div>
+      <div class="menu_item" (click)="tradeService.changeCount(0.1, 'plus', tradeService.buyOrSellManualForm)">
+        <span class="common_big_span">+0.1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_dialog_body_input modal_dialog_body_input_m">
+    <div class="input_item">
+      <span class="common_small_span">{{localize.language.stopLoss}}</span>
+      <input class="trade_input_field" maxlength="7" formControlName="bottomLimit"
+             (keypress)="tradeService.checkInputValue($event)" [placeholder]="localize.language.noPrice"/>
+    </div>
+    <div class="border_item"></div>
+    <div class="input_item">
+      <span class="common_small_span">{{localize.language.takeProfit}}</span>
+      <input class="trade_input_field" maxlength="7" formControlName="topLimit"
+             (keypress)="tradeService.checkInputValue($event)" [placeholder]="localize.language.noPrice"/>
+    </div>
+  </div>
+
+  <div class="popup_button_group">
+    <button class="green_button trade_button" (click)="tradeService.finishManualAction('BUY')">{{localize.language.toBuy}}</button>
+    <button class="red_button trade_button" (click)="tradeService.finishManualAction('SELL')">{{localize.language.toSell}}</button>
+  </div>
+
+</div>

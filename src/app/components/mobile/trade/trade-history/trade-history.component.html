@@ -1,0 +1,47 @@
+<div class="trade_table_section">
+  <div style="overflow-x: scroll;">
+    <table class="trade_table_block">
+      <tr class="trade_table_header">
+        <th>{{localize.language.ticker}}</th>
+        <th>{{localize.language.direction}}</th>
+        <th>{{localize.language.priceRange}}</th>
+        <th>{{localize.language.openingDate}}</th>
+        <th>{{localize.language.closeDate}}</th>
+        <th>{{localize.language.result}}</th>
+      </tr>
+      <tr *ngFor="let item of tradeService.myTransactionData" class="trade_history_table_body_item">
+        <td class="trade_span">
+          <h5>{{item?.symbolName}}</h5>
+          <span style="color: #8C8F90">{{item?.name.substring(0, 30) + '...'}}</span>
+        </td>
+
+        <td [ngSwitch]="item?.action" [ngClass]="item?.action === commonEnum.buy ? 'common_big_span_green' : 'common_big_span_red'">
+          <ng-container *ngSwitchCase="commonEnum.buy">{{localize.language.buy}}<span style="margin-left: 7px">{{item?.count | number : '1.2-2' | noComma}}</span></ng-container>
+          <ng-container *ngSwitchCase="commonEnum.sell">{{localize.language.sell}}<span style="margin-left: 7px">{{item?.count | number : '1.2-2' | noComma}}</span></ng-container>
+        </td>
+
+        <td>
+          <div class="price_range_block">
+            <span>{{(item?.priceRange?.start ? (item?.priceRange?.start | number : '1.2-2' | noComma) : '') + ' '}}</span>
+            <img *ngIf="item?.priceRange?.start && item?.priceRange?.end" src="assets/images/shared/ui-kit/arrow.svg">
+            <span>{{(item?.priceRange?.end ? (item?.priceRange?.end | number : '1.2-2' | noComma) : '') + ' '}}</span>
+          </div>
+        </td>
+
+        <td>{{item?.entryDate | date: 'dd.MM.yyyy'}}</td>
+        <td>{{item?.closeDate | date: 'dd.MM.yyyy'}}</td>
+
+        <td [ngClass]="item?.result > 0 ? 'common_big_span_green' : (item?.result == 0 ? '' : 'common_big_span_red')">
+          {{item?.result | number : '1.2-2' | noComma}}
+        </td>
+
+      </tr>
+    </table>
+  </div>
+  <div class="display_more" (click)="addPaginationTransaction()" *ngIf="tradeService.myTransactionLength && !tradeService.removePagination">
+    <span class="common_medium_span">{{localize.language.loadMore}}</span>
+  </div>
+  <div class="no_data_trade" *ngIf="!tradeService.myTransactionLength">
+    <span class="common_big_span_grey">{{localize.language.noData}}</span>
+  </div>
+</div>

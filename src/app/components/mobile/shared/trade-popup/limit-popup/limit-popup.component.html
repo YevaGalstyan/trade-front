@@ -1,0 +1,72 @@
+<div [formGroup]="tradeService.buyOrSellAutomateForm">
+  <div class="trade_menu_popup_outer">
+    <div class="trade_menu_popup" [ngClass]="'menu_item_' + tradeService.limitPopupMenuItem ">
+      <div (click)="tradeService.getMenuItem(1, 'BUY_LIMIT')" class="common_extra_small_span_grey trade_menu_popup_item"
+           [ngClass]="tradeService.limitPopupMenuItem === 1 ? 'active_limit_menu_item' : ''">
+        {{localize.language.buyLimit}}
+      </div>
+      <div (click)="tradeService.getMenuItem(2, 'SELL_LIMIT')" class="common_extra_small_span_grey trade_menu_popup_item"
+           [ngClass]="tradeService.limitPopupMenuItem === 2 ? 'active_limit_menu_item' : ''">
+        {{localize.language.sellLimit}}
+      </div>
+      <div (click)="tradeService.getMenuItem(3, 'BUY_STOP')" class="common_extra_small_span_grey trade_menu_popup_item"
+           [ngClass]="tradeService.limitPopupMenuItem === 3 ? 'active_limit_menu_item' : ''">
+        {{localize.language.buyStop}}
+      </div>
+      <div (click)="tradeService.getMenuItem(4, 'SELL_STOP')" class="common_extra_small_span_grey trade_menu_popup_item"
+           [ngClass]="tradeService.limitPopupMenuItem === 4 ? 'active_limit_menu_item' : ''">
+        {{localize.language.sellStop}}
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_dialog_body_check modal_dialog_body_check_l">
+    <div style="display: flex; gap: 20px">
+      <div class="menu_item" (click)="tradeService.changeCount(0.1, 'minus', tradeService.buyOrSellAutomateForm)">
+        <span class="common_big_span">-0.1</span>
+      </div>
+      <div class="menu_item" (click)="tradeService.changeCount(0.01, 'minus', tradeService.buyOrSellAutomateForm)">
+        <span class="common_big_span">-0.01</span>
+      </div>
+    </div>
+
+    <input class="trade_input_field" formControlName="count" placeholder="0.90"/>
+
+    <div style="display: flex; gap: 20px">
+      <div class="menu_item" (click)="tradeService.changeCount(0.01, 'plus', tradeService.buyOrSellAutomateForm)">
+        <span class="common_big_span">+0.01</span>
+      </div>
+      <div class="menu_item" (click)="tradeService.changeCount(0.1, 'plus', tradeService.buyOrSellAutomateForm)">
+        <span class="common_big_span">+0.1</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal_dialog_body_input modal_dialog_body_input_l" style="border-top: 1px solid rgba(64, 69, 75, 1);">
+    <span class="common_small_span">{{localize.language.price}}</span>
+    <input (input)="tradeService.resetPopupError()" class="trade_input_field" maxlength="7"
+           [ngClass]="tradeService.limitPopupModalSubmitted && !f.priceWhen.value ? 'trade_input_field_error' : ''"
+           formControlName="priceWhen" [placeholder]="localize.language.noPrice"/>
+  </div>
+
+  <div class="modal_dialog_body_input" style="border-top: 1px solid rgba(64, 69, 75, 1);">
+    <div class="input_item">
+      <span class="common_small_span">{{localize.language.stopLoss}}</span>
+      <input class="trade_input_field" maxlength="7" formControlName="bottomLimit"
+             (keypress)="tradeService.checkInputValue($event)" [placeholder]="localize.language.noPrice"/>
+    </div>
+
+  </div>
+
+  <div class="modal_dialog_body_input" style="border-top: 1px solid rgba(64, 69, 75, 1); border-bottom: 1px solid rgba(64, 69, 75, 1);">
+    <div class="input_item">
+      <span class="common_small_span">{{localize.language.takeProfit}}</span>
+      <input class="trade_input_field" maxlength="7" formControlName="topLimit"
+             (keypress)="tradeService.checkInputValue($event)" [placeholder]="localize.language.noPrice"/>
+    </div>
+  </div>
+
+  <div class="popup_button_group_l popup_button_group">
+    <button class="dark_button trade_button" (click)="tradeService.finishAutomateAction()">{{localize.language.toSet}}</button>
+  </div>
+</div>

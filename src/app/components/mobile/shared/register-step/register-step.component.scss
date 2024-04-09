@@ -1,0 +1,42 @@
+.register_step_block {
+  display: flex;
+  align-items: center;
+}
+
+.inner_lines {
+  width: 30px;
+  height: 3px;
+  background-color: var(--addit-light-color);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.step_item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.step_cycle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--addit-light-color);
+
+  font-family: Inter-Light;
+  font-size: 12px;
+  color: var(--global-disabled-color);
+}
+
+.current_step {
+  background-color: var(--global-dark-color);
+  color: var(--global-light-color);
+}
+
+.current_step_text {
+  color: #F2F4F5;
+}

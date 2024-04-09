@@ -1,0 +1,49 @@
+<div class="user_section">
+  <h1>{{localize.language.supportService}}</h1>
+  <div *ngIf="sharedService.userStatus; else deactivatedUser" class="user_account_menu">
+    <!--User support-->
+    <span class="common_big_span_grey">{{localize.language.userSupportInfo}}</span>
+    <div class="user_form_block">
+      <div class="input_field_block" [formGroup]="userService.userSupportForm">
+        <label class="common_label">
+          <input (input)="userService.resetErrorMessage()" class="common_input_field" type="email" formControlName="email" [email]="true"
+                 [placeholder]="localize.language.email">
+          <span class="common_input_text">{{localize.language.yourEmail}}</span>
+          <span *ngIf="userService.userSupportSubmitted && f.email.invalid" class="common_error_span">
+          <span *ngIf="f.email.value; else invalidData">{{localize.language.invalidEmail}}</span>
+          <ng-template #invalidData>
+            <span>{{localize.language.invalidField}}</span>
+          </ng-template>
+        </span>
+          <span class="common_error_span" *ngIf="userService.emailValidationErrorMessage">{{userService.emailValidationErrorMessage}}</span>
+        </label>
+
+        <label class="common_label">
+          <textarea rows="1" (input)="userService.resetErrorMessage()" class="common_input_field" type="text" formControlName="question"
+                    [placeholder]="localize.language.inquiry">
+          </textarea>
+          <span class="common_input_text">{{localize.language.inquiry}}</span>
+          <span *ngIf="userService.userSupportSubmitted && f.question.invalid" class="common_error_span">
+            <span>{{localize.language.invalidField}}</span>
+          </span>
+        </label>
+      </div>
+
+      <button (click)="userService.submitSupportInquiry()"
+              class="common_button dark_button fixed_mid_button">{{localize.language.send}}</button>
+    </div>
+  </div>
+
+  <ng-template #deactivatedUser>
+    <div class="unverified_user">
+      <span class="common_big_span">{{localize.language.waitForVerification}}</span>
+    </div>
+  </ng-template>
+</div>
+
+<app-common-small-popup
+  *ngIf="commonModalStatus"
+  [popupText]="'youQueryIsSent'"
+  [popupTitle]="'queryPopupTitle'">
+</app-common-small-popup>
+

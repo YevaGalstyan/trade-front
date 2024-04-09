@@ -1,0 +1,41 @@
+.modal_dialog_block_big {
+  width: 1200px;
+  height: calc(100vh - 80px);
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  background-color: #1C1F23;
+}
+
+.modal_dialog_body_big {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 70px 80px 70px;
+  max-height: calc(100vh - 170px);
+  overflow-y: scroll;
+  gap: 58px;
+
+  word-break: break-all;
+
+  .common_checkbox_block {
+    margin-top: 10px;
+  }
+
+  .common_checkbox_block {
+    .common_small_span:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .common_button {
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+.terms_conditions_info {
+  display: flex;
+  flex-direction: column;
+}

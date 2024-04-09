@@ -1,0 +1,17 @@
+<div class="user_section">
+  <h1>{{localize.language.topUp}}</h1>
+  <div *ngIf="sharedService.userStatus; else deactivatedUser" class="user_account_menu">
+    <!--User top up-->
+    <span class="common_big_span_grey">{{localize.language.userAccountTopUp}}</span>
+    <div class="top_up_section">
+      <h2>{{localize.language.userAccountTopUpTypes}}</h2>
+      <app-top-up-data></app-top-up-data>
+    </div>
+  </div>
+
+  <ng-template #deactivatedUser>
+    <div class="unverified_user">
+      <span class="common_big_span">{{localize.language.waitForVerification}}</span>
+    </div>
+  </ng-template>
+</div>

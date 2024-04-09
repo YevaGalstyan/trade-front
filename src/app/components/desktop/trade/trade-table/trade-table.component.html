@@ -1,0 +1,59 @@
+<div class="trade_table_section">
+  <table class="trade_table_block">
+    <tr class="trade_table_header">
+      <th>{{localize.language.ticker}}</th>
+      <th *ngIf="!forStock">{{localize.language.direction}}</th>
+      <th>{{forStock ? localize.language.lastPrice : localize.language.openingPrice}}</th>
+      <th *ngIf="!forStock">{{localize.language.currentPrice}}</th>
+      <th>{{localize.language.changesInPercents}}</th>
+      <th>{{forStock ? localize.language.changes : localize.language.profitLoss}}</th>
+    </tr>
+    <tr *ngFor="let item of displayedData" class="trade_table_body_item" [ngClass]="forStock ? 'trade_for_stock' : ''"
+        (click)="forStock ? tradeService.getTradeModal(item) : tradeService.getTradePortfolioModal(item)">
+      <!--Ticker-->
+      <td class="trade_span">
+        <h5>{{forStock ? item?.symbol : item?.symbolName}}</h5>
+        <span style="color: #8C8F90">{{item?.name}}</span>
+      </td>
+
+      <!--Direction-->
+      <td *ngIf="!forStock" [ngSwitch]="item?.actionType" [ngClass]="item?.actionType === commonEnum.buyLimit || item?.actionType === commonEnum.buyStop || item?.actionType === commonEnum.BUY ? 'common_big_span_green' :
+      (item?.actionType === commonEnum.sellLimit || item?.actionType === commonEnum.sellStop || item?.actionType === commonEnum.SELL ? 'common_big_span_red' : '')">
+        <ng-container *ngSwitchCase="commonEnum.buyLimit">{{localize.language.buyStop}}<span style="margin-left: 7px">{{item?.count}}</span></ng-container>
+        <ng-container *ngSwitchCase="commonEnum.buyStop">{{localize.language.buyLimit}}<span style="margin-left: 7px">{{item?.count}}</span></ng-container>
+        <ng-container *ngSwitchCase="commonEnum.sellLimit">{{localize.language.sellStop}}<span style="margin-left: 7px">{{item?.count}}</span></ng-container>
+        <ng-container *ngSwitchCase="commonEnum.sellStop">{{localize.language.sellLimit}}<span style="margin-left: 7px">{{item?.count}}</span></ng-container>
+        <ng-container *ngSwitchCase="commonEnum.BUY">{{localize.language.buy}}<span style="margin-left: 7px">{{item?.count}}</span></ng-container>
+        <ng-container *ngSwitchCase="commonEnum.SELL">{{localize.language.sell}}<span style="margin-left: 7px">{{item?.count}}</span></ng-container>
+      </td>
+
+      <!--Last Price / Opening Price-->
+      <td>{{(forStock ? item?.symbolDetail?.price : item?.priceWhenOpened) | number : '1.2-2' | noComma}}</td>
+
+      <!--Current Price-->
+      <td *ngIf="!forStock"> {{item?.symbolDetail?.price | number : '1.2-2' | noComma}}</td>
+
+      <!--Changes In Percent-->
+      <td [ngClass]="item?.currentChange > 0 ? 'common_big_span_green' : (item?.currentChange == 0 ? '' : 'common_big_span_red')">
+        {{item?.symbolDetail?.percent_change ? (item.symbolDetail.percent_change  | number : '1.2-2' | noComma) + '%' : ''}}
+      </td>
+
+      <!--Changes / Profit Loss-->
+      <td *ngIf="forStock; else forPortfolio"
+          [ngClass]="item?.symbolDetail?.change > 0 ? 'common_big_span_green' : (item?.symbolDetail?.change == 0 ? '' : 'common_big_span_red')">
+        {{item?.symbolDetail?.change | number : '1.2-2' | noComma}}
+      </td>
+      <ng-template #forPortfolio>
+        <td [ngClass]="item?.currentChange > 0 ? 'common_big_span_green' : (item?.currentChange == 0 ? '' : 'common_big_span_red')">
+          {{item?.currentChange | number : '1.2-2' | noComma}}
+        </td>
+      </ng-template>
+    </tr>
+  </table>
+  <div class="display_more" (click)="addPaginationTransaction()" *ngIf="forStock && displayedData && !tradeService.removePagination">
+    <span class="common_medium_span">{{localize.language.loadMore}}</span>
+  </div>
+  <div class="no_data_trade" *ngIf="!displayedData?.length">
+    <span class="common_big_span_grey">{{forStock ? localize.language.noDataStock : localize.language.noData}}</span>
+  </div>
+</div>

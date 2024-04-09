@@ -1,0 +1,36 @@
+.user_menu_section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 82px;
+}
+
+.user_menu_block {
+  width: 100%;
+  overflow-y: scroll;
+  padding: 15px 0 0 20px;
+  display: flex;
+  gap: 20px;
+  color: var(--global-disabled-color);
+  cursor: pointer;
+  border-bottom: 1px solid #40454B;
+
+  span:hover {
+    color: var(--global-dark-color);
+  }
+}
+
+.user_menu_block::-webkit-scrollbar {
+  display: none;
+}
+
+.user_menu_span {
+  font-size: 16px;
+  color: var(--global-disabled-color);
+  cursor: pointer;
+}
+
+.active_account_item {
+  border-bottom: 1px solid #F2F4F5;
+  padding-bottom: 15px;
+}

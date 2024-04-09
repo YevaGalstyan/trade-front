@@ -1,0 +1,19 @@
+@import "../../user-account-overview/history-table/history-table.component";
+
+.transaction_table_body_item {
+  .coin_address {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+
+    span {
+      word-break: break-all;
+      white-space: break-spaces;
+      line-height: normal;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+}

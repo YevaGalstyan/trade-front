@@ -1,0 +1,32 @@
+<div *ngIf="userService.userTransactionHistory" class="transaction_history">
+  <h2>{{localize.language.transactionHistory}}</h2>
+  <div class="transaction_table_block">
+    <table class="transaction_table_block">
+      <tr class="transaction_table_header">
+        <th>{{localize.language.date}}</th>
+        <th>{{localize.language.amount}}</th>
+        <th>{{localize.language.transactionType}}</th>
+      </tr>
+      <tr *ngFor="let item of userService.userTransactionHistory" class="transaction_table_body_item">
+        <td>{{item.createdAt | date: 'dd.MM.yyyy'}}</td>
+        <td>{{item.money | number : '1.2-2' | noComma}}<span class="currency_text">{{item.currency}}</span></td>
+        <td [ngSwitch]="item.type">
+          <span *ngSwitchCase="commonEnum.advancePaymentWithdraw">{{localize.language.advancePaymentWithdraw}}</span>
+          <span *ngSwitchCase="commonEnum.withdraw">{{localize.language.toWithdraw}}</span>
+          <span *ngSwitchCase="commonEnum.topUp">{{localize.language.toTopUp}}</span>
+          <span *ngSwitchCase="commonEnum.bonus">{{localize.language.bonus}}</span>
+          <span *ngSwitchCase="commonEnum.advancePayment">{{localize.language.advancePayment}}</span>
+          <span *ngSwitchCase="commonEnum.dividend">{{localize.language.dividends}}</span>
+          <span *ngSwitchCase="commonEnum.writeOff">{{localize.language.writeOff}}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="display_more" *ngIf="!userService.removePagination && this.userService.userTransactionLength">
+    <span class="common_medium_span" (click)="addPaginationTransaction();">{{localize.language.loadMore}}</span>
+  </div>
+  <div class="no_data" *ngIf="!this.userService.userTransactionLength">
+    <span>{{localize.language.noDataToShow}}</span>
+  </div>
+
+</div>

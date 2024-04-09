@@ -1,0 +1,46 @@
+<div style="margin-bottom: 100px">
+  <div  *ngFor="let detail of displayedDetails; let i = index">
+    <div *ngIf="currentPinNumber === i+1" class="pin_info">
+      <div class="pin_info_header">
+        <span class="common_big_span">{{localize.language[detail.title]}}</span>
+        <img width="10px" [src]="sharedService.currentTheme ?
+           'assets/images/shared/ui-kit/closeIconDark.svg' : 'assets/images/shared/ui-kit/closeIconLight.svg'" alt="logo">
+      </div>
+
+      <div class="pin_info_body">
+        <span class="common_small_span">{{localize.language[detail.info]}}</span>
+        <span class="common_extra_small_span_grey" *ngFor="let workHour of detail.workingHours">
+            {{workHour}}
+          </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="map_block">
+    <img src="assets/images/shared/mapLight.svg" alt="logo">
+    <div class="map_pins">
+      <div class="map_pin pin_1" #pin (click)="seeDetails(1)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_2" #pin (click)="seeDetails(2)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_3" #pin (click)="seeDetails(3)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_4" #pin (click)="seeDetails(4)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_5" #pin (click)="seeDetails(5)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_6" #pin (click)="seeDetails(6)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_7" #pin (click)="seeDetails(7)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_8" #pin (click)="seeDetails(8)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_9" #pin (click)="seeDetails(9)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_10" #pin (click)="seeDetails(10)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_11" #pin (click)="seeDetails(11)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_12" #pin (click)="seeDetails(12)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_13" #pin (click)="seeDetails(13)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_14" #pin (click)="seeDetails(14)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_15" #pin (click)="seeDetails(15)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_16" #pin (click)="seeDetails(16)"><div #pin class="map_pin_inner"></div></div>
+      <div class="map_pin pin_17" #pin (click)="seeDetails(17)"><div #pin class="map_pin_inner"></div></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

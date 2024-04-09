@@ -1,0 +1,32 @@
+<div class="user_section">
+  <h1>{{localize.language.accountOverview}}</h1>
+  <div *ngIf="sharedService.userStatus; else deactivatedUser" class="user_account_overview">
+    <!--Account overview-->
+    <div class="user_menu_item">
+      <div style="display: flex; gap: 20px;">
+        <div class="active_header_item" *ngFor="let id of invoiceIds"
+             [routerLink]="'/account/account-overview/' + id">
+                <span routerLinkActive="common_big_span_bold active_account_border">{{id}}</span>
+          <div class="account_menu_border_item"></div>
+        </div>
+      </div>
+      <img style="margin-bottom: 14px" src="assets/images/shared/ui-kit/addInvoice.svg" (click)="userService.addNewInvoice()"/>
+    </div>
+    <div class="account_menu_border"></div>
+    <div class="account_details">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <ng-template #deactivatedUser>
+    <div class="unverified_user">
+      <span class="common_big_span">{{localize.language.waitForVerification}}</span>
+    </div>
+  </ng-template>
+</div>
+
+<app-common-small-popup
+  *ngIf="commonModalStatus"
+  [popupText]="userService.accountOverviewPopupBody"
+  [popupTitle]="userService.accountOverviewPopupHeader">
+</app-common-small-popup>

@@ -1,0 +1,16 @@
+<div class="trade_search_section">
+  <img
+    [src]="sharedService.currentTheme ? 'assets/images/shared/ui-kit/searchIconDark.svg' : 'assets/images/shared/ui-kit/searchIconLight.svg'"/>
+  <input [placeholder]="localize.language.searchPlaceholder"  class="searchTerm" type="text" name="searchTerm"
+         [formControl]="tradeService.searchTermForm" (input)="tradeService.searchFilter(tradeService.searchTermForm.value, this.tradeService.lastSearchCount)"/>
+</div>
+<app-trade-table [forStock]="true" [displayedData]="tradeService.MOEXStocksData"></app-trade-table>
+
+<app-trade-popup *ngIf="tradeModalStatus"></app-trade-popup>
+
+<app-common-small-popup
+  *ngIf="commonModalStatus"
+  [forTrade]="true"
+  [popupText]="this.tradeService.tradeStocksPopupText"
+  [popupTitle]="this.tradeService.tradeStocksPopupHeader">
+</app-common-small-popup>

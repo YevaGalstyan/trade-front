@@ -1,0 +1,29 @@
+<div class="general_footer_section">
+  <div class="footer_section_upper">
+    <div style="display: flex; flex-direction: column">
+      <span class="common_small_span_grey">{{localize.language.footerInfoPar1}}</span>
+      <span class="common_small_span_grey">{{localize.language.footerInfoPar11}}</span>
+    </div>
+    <button *ngIf="!showFooter" (click)="showAllFooter()" style="width: fit-content" class="common_button transparent_button">{{localize.language.showAll}}</button>
+
+    <div class="footer_rest" *ngIf="showFooter">
+      <span class="common_small_span_grey">{{localize.language.footerInfoPar2}}</span>
+      <span class="common_small_span_grey">
+        {{localize.language.footerInfoPar3}}
+        <a target="_blank" href="../../../../../assets/pdfs/Characteristics_and_risks.pdf" class="common_small_span">{{localize.language.footerLink1}}</a>
+        <span>{{localize.language.footerInfoPar4}}</span>
+        <a target="_blank" href="../../../../../assets/pdfs/Risk_Alert_Application.pdf" class="common_small_span">{{localize.language.footerLink2}}</a>
+        <span>{{localize.language.footerInfoPar5}}</span>
+        <a target="_blank" href="../../../../../assets/pdfs/RISK_DISCLOSURE_STATEMENT.pdf" class="common_small_span">{{localize.language.footerLink3}}</a>
+        <span>{{localize.language.footerInfoPar6}}</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="all_right_reserved">
+    <span class="common_small_span_grey">{{localize.language.title}}</span>
+    <span style="margin-bottom: 10px" class="common_small_span_grey">{{localize.language.footer}}</span>
+    <span class="common_small_span_grey">{{localize.language.allRights}}</span>
+  </div>
+
+</div>

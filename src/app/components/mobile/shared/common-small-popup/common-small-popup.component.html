@@ -1,0 +1,15 @@
+<div class="modal_dialog_section" (click)="closeModal($event)">
+
+  <div #innerModal class="modal_dialog_block">
+
+    <div class="modal_dialog_header">
+      <span>{{localize.language[popupTitle]}}</span>
+      <img (click)="desktopService.closeCommonSmallModal()" src="assets/images/shared/ui-kit/closeIconDark.svg" alt="logo">
+    </div>
+
+    <div class="modal_dialog_body" style="flex-direction: column" [ngClass]="forTrade ? 'modal_for_trade' : (forOrder ?  'modal_for_order' : '')">
+      <span [ngClass]="forOrder ? 'for_order_span' : ''" class="common_big_span_grey">{{localize.language[popupText]}}</span>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

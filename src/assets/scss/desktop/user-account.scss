@@ -1,0 +1,266 @@
+.user_global_section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.user_global_block {
+  width: 1200px;
+  display: flex;
+}
+
+.user_account_section {
+  overflow-x: hidden;
+  height: 100%;
+  width: 910px;
+}
+
+@media only screen and (max-width: 750px) {
+  .user_global_section {
+    width: 100%;
+  }
+}
+
+// User account styles
+.user_section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 160px 0 0 40px;
+
+  h1 {
+    font-size: 48px;
+  }
+}
+
+.user_section_payment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 160px 0 0 40px;
+
+  h1 {
+    font-size: 48px;
+  }
+}
+
+.unverified_user {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  span {
+    color: var(--global-disabled-color);
+  }
+}
+
+.user_account_overview {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user_account_menu {
+  display: flex;
+  flex-direction: column;
+
+  .common_big_span_grey {
+    width: 560px;
+  }
+}
+
+.user_menu_item {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--global-disabled-color);
+  cursor: pointer;
+  z-index: 2;
+
+  span:hover {
+    color: var(--global-dark-color);
+  }
+}
+
+.active_header_item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.account_menu_border {
+  height: 1px;
+  width: 100%;
+  margin-top: -1px;
+  background-color: var(--addit-light-color);
+}
+
+.account_menu_border_item {
+  height: 1px;
+}
+
+.active_account_border + .account_menu_border_item {
+  background-color: var(--global-dark-color);
+}
+
+.account_details {
+  margin-top: 50px;
+}
+
+.user_form_block {
+  width: 100%;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+
+  .common_button {
+    width: fit-content;
+  }
+}
+
+.user_account_block {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+
+  .input_field_block {
+    flex: 1;
+  }
+}
+
+// User account details styles
+.user_account_detail {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    width: fit-content;
+    height: fit-content;
+  }
+}
+
+.account_balance {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.transaction_history {
+  width: 100%;
+  margin: 60px 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top_up_section {
+  width: 100%;
+  margin: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+// Big popup styles
+.popup_section {
+  max-height: calc(100vh - 300px);
+  overflow-y: scroll;
+  display: flex;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  flex-direction: column;
+}
+
+.popup_body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 70px;
+  gap: 30px;
+
+  span {
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.popup_footer {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.common_checkbox_block {
+  gap: 5px;
+
+  .common_small_span {
+    margin-top: 1px;
+  }
+
+  .common_small_span_grey {
+    margin-top: 1px;
+  }
+}
+
+// Big popup styles mobile
+.popup_section_m {
+  max-height: calc(100vh - 100px);
+  overflow-y: scroll;
+  display: flex;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  flex-direction: column;
+}
+
+.popup_body_m {
+  margin: 0 20px;
+}
+
+
+// Advance payment styles
+.advance_payment_info {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.user_detail_popup {
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+
+  span {
+    margin: 50px 68px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 200;
+    color: var( --global-disabled-color);
+  }
+}
+
+//Documents styles
+.user_documents_section {
+  margin: 60px 0 60px;
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.user_documents_item {
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}

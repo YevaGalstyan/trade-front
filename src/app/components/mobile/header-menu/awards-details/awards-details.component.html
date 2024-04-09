@@ -1,0 +1,424 @@
+<div class="details_section">
+
+  <div class="award_header_section">
+    <h1>{{localize.language.awards}}</h1>
+  </div>
+
+  <div class="awards_body_section">
+    <div class="awards_section_d" [ngClass]="closeAwardArr[0] ? '' : 'closed_award_section'">
+      <div class="award_header" (click)="changeAwardStatus(0)">
+        <span class="common_medium_span">2022 {{localize.language.year}}</span>
+        <img [src]="closeAwardArr[0] ? 'assets/images/mobile/ui-kit/up-arrow.svg' :
+        'assets/images/mobile/ui-kit/down-arrow.svg'">
+      </div>
+
+      <div *ngIf="closeAwardArr[0]" class="awards_item_block">
+        <div class="award_item">
+          <img width="90px" src="assets/images/shared/awards/awardsDetailed/awards20221.svg" alt="logo">
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20221textLi1}}</li>
+              <li>{{localize.language.awards20221textLi2}}</li>
+              <li>{{localize.language.awards20221textLi3}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.barrons}}</span>
+              <span class="common_extra_small_span_grey">2022</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20223.svg" alt="logo">
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20223}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.investopedia}}</span>
+              <span class="common_extra_small_span_grey">2022</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20224.svg" alt="logo">
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20224textLi1}}</li>
+              <li>{{localize.language.awards20224textLi3}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.brokerchooser}}</span>
+              <span class="common_extra_small_span_grey">2022</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20222.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20222}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.investopedia}}</span>
+              <span class="common_extra_small_span_grey">2022</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="awards_section_d" [ngClass]="closeAwardArr[1] ? '' : 'closed_award_section'">
+      <div class="award_header" (click)="changeAwardStatus(1)">
+        <span class="common_medium_span">2021 {{localize.language.year}}</span>
+        <img [src]="closeAwardArr[1] ? 'assets/images/mobile/ui-kit/up-arrow.svg' :
+        'assets/images/mobile/ui-kit/down-arrow.svg'">
+      </div>
+
+      <div *ngIf="closeAwardArr[1]" class="awards_item_block">
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20211.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20211textLi1}}</li>
+              <li>{{localize.language.awards20211textLi3}}</li>
+              <li>{{localize.language.awards20211textLi4}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.barrons}}</span>
+              <span class="common_extra_small_span_grey">2021</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20213.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20213}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.stockBrokers}}</span>
+              <span class="common_extra_small_span_grey">2021</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20212.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20212textLi1}}</li>
+              <li>{{localize.language.awards20212textLi2}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.bankRate}}</span>
+              <span class="common_extra_small_span_grey">2021</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="awards_section_d" [ngClass]="closeAwardArr[2] ? '' : 'closed_award_section'">
+      <div class="award_header" (click)="changeAwardStatus(2)">
+        <span class="common_medium_span">2020 {{localize.language.year}}</span>
+        <img [src]="closeAwardArr[2] ? 'assets/images/mobile/ui-kit/up-arrow.svg' :
+        'assets/images/mobile/ui-kit/down-arrow.svg'">
+      </div>
+
+      <div *ngIf="closeAwardArr[2]" class="awards_item_block">
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20201.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20201textLi1}}</li>
+              <li>{{localize.language.awards20201textLi3}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.barrons}}</span>
+              <span class="common_extra_small_span_grey">2020</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20205.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20205}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.finder}}</span>
+              <span class="common_extra_small_span_grey">2020</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20202.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20202}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.stockBrokers}}</span>
+              <span class="common_extra_small_span_grey">2020</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20204.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20204}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.nerdWallet}}</span>
+              <span class="common_extra_small_span_grey">2020</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20203.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20203}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.stockBrokers}}</span>
+              <span class="common_extra_small_span_grey">2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="awards_section_d" [ngClass]="closeAwardArr[3] ? '' : 'closed_award_section'">
+      <div class="award_header" (click)="changeAwardStatus(3)">
+        <span class="common_medium_span">2019 {{localize.language.year}}</span>
+        <img [src]="closeAwardArr[3] ? 'assets/images/mobile/ui-kit/up-arrow.svg' :
+        'assets/images/mobile/ui-kit/down-arrow.svg'">
+      </div>
+
+      <div *ngIf="closeAwardArr[3]" class="awards_item_block">
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20191.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20191textLi1}}</li>
+              <li>{{localize.language.awards20191textLi2}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.barrons}}</span>
+              <span class="common_extra_small_span_grey">2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20195.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20195}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.stockBrokers}}</span>
+              <span class="common_extra_small_span_grey">2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20192.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20192}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.cardRates}}</span>
+              <span class="common_extra_small_span_grey">2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20194.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20194}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.stockBrokers}}</span>
+              <span class="common_extra_small_span_grey">2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20193.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20193}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.preqin}}</span>
+              <span class="common_extra_small_span_grey">2019</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20196.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20196}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.stockBrokers}}</span>
+              <span class="common_extra_small_span_grey">2019</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="awards_section_d" [ngClass]="closeAwardArr[4] ? '' : 'closed_award_section'">
+      <div class="award_header" (click)="changeAwardStatus(4)">
+        <span class="common_medium_span">2018 {{localize.language.year}}</span>
+        <img [src]="closeAwardArr[4] ? 'assets/images/mobile/ui-kit/up-arrow.svg' :
+        'assets/images/mobile/ui-kit/down-arrow.svg'">
+      </div>
+      <div *ngIf="closeAwardArr[4]" class="awards_item_block">
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20181.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20181textLi1}}</li>
+              <li>{{localize.language.awards20181textLi2}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.barrons}}</span>
+              <span class="common_extra_small_span_grey">2018</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20182.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20182}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.canstar}}</span>
+              <span class="common_extra_small_span_grey">2018</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20183.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20183}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.investorsDaily}}</span>
+              <span class="common_extra_small_span_grey">2018</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20184.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20184}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.nerdWallet}}</span>
+              <span class="common_extra_small_span_grey">2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="awards_section_d" [ngClass]="closeAwardArr[5] ? '' : 'closed_award_section'">
+      <div class="award_header" (click)="changeAwardStatus(5)">
+        <span class="common_medium_span">2017 {{localize.language.year}}</span>
+        <img [src]="closeAwardArr[5] ? 'assets/images/mobile/ui-kit/up-arrow.svg' :
+        'assets/images/mobile/ui-kit/down-arrow.svg'">
+      </div>
+
+      <div *ngIf="closeAwardArr[5]" class="awards_item_block">
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20171.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20171textLi1}}</li>
+              <li>{{localize.language.awards20171textLi2}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.barrons}}</span>
+              <span class="common_extra_small_span_grey">2017</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="award_item">
+          <img src="assets/images/shared/awards/awardsDetailed/awards20172.svg"/>
+          <div class="award_item_inner">
+            <ul>
+              <li>{{localize.language.awards20172}}</li>
+            </ul>
+
+            <div class="awards_footer">
+              <span class="common_extra_small_span_grey">{{localize.language.stockBrokers}}</span>
+              <span class="common_extra_small_span_grey">2017</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer-links></app-footer-links>
+</div>

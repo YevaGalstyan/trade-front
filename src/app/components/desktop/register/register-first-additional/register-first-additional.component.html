@@ -1,0 +1,66 @@
+<div class="register_section" (click)="sharedService.outerCloseDouble($event, dropdown1, dropdownIcon1, dropdown2, dropdownIcon2)">
+  <h1>{{localize.language.personalData}}</h1>
+
+  <div class="register_block">
+    <div (click)="registerService.resetErrorMessage()"  class="input_field_block" [formGroup]="registerService.userRegisterForm">
+      <div>
+        <div #dropdown1 class="common_select_field">
+          <input #dropdownIcon1 class="dropdown_input" [placeholder]="localize.language.country" formControlName="country"
+                 (input)="registerService.showCountries()">
+        </div>
+        <span *ngIf="registerService.firstAddStepSubmitted && f.country.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+        <span *ngIf="registerService.firstAddStepSubmitted && f.country.valid && !registerService.validCountry" class="common_error_span">
+          {{localize.language.validCountry}}
+        </span>
+        <ul class="common_select_dropdown" *ngIf="desktopService.dropdownStatusFirst">
+          <li (click)="chooseCountry(country)" *ngFor="let country of countriesApi.countriesList">{{country.name}}</li>
+        </ul>
+      </div>
+
+      <div>
+        <div #dropdown2 class="common_select_field">
+          <input [readOnly]="!country" #dropdownIcon2 class="dropdown_input" [placeholder]="localize.language.town" formControlName="city"
+                 (input)="registerService.showCities()">
+        </div>
+        <span *ngIf="registerService.firstAddStepSubmitted && f.city.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+        <span *ngIf="registerService.firstAddStepSubmitted && f.city.valid && !registerService.validCity" class="common_error_span">
+          {{localize.language.validCity}}
+        </span>
+        <ul class="common_select_dropdown" *ngIf="desktopService.dropdownStatusSecond">
+          <li (click)="chooseCity(city)" *ngFor="let city of countriesApi.citiesListByCountry">{{city.name}}</li>
+        </ul>
+      </div>
+
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()"  class="common_input_field" formControlName="actualAddress" type="text"  [placeholder]="localize.language.actualAddress">
+        <span class="common_input_text">{{localize.language.actualAddress}}</span>
+        <span *ngIf="registerService.firstAddStepSubmitted && f.actualAddress.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+      </label>
+
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()"  class="common_input_field" formControlName="registrationAddress" type="text" [placeholder]="localize.language.registrationAddress">
+        <span class="common_input_text">{{localize.language.registrationAddress}}</span>
+        <span *ngIf="registerService.firstAddStepSubmitted && f.registrationAddress.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+      </label>
+
+      <label class="common_label">
+        <input (input)="registerService.resetErrorMessage()"  class="common_input_field" formControlName="phone" type="number" [placeholder]="localize.language.phone">
+        <span class="common_input_text">{{localize.language.phone}}</span>
+        <span *ngIf="registerService.firstAddStepSubmitted && f.phone.invalid" class="common_error_span">
+          {{localize.language.invalidField}}
+        </span>
+      </label>
+
+    </div>
+    <button (click)="registerService.finishFirstStepAdd()"
+            class="common_button dark_button fixed_mid_button">{{localize.language.next}}</button>
+  </div>
+</div>
