@@ -1,7 +1,7 @@
 
-# Imperial Capital Group
+# Trading platform
 
-Imperial Capital Group is a platform offering services for conducting cryptocurrency trading in a safe and protected environment. The platform offers a user-friendly interface, making it easy for both beginners and experienced traders to navigate and execute trades effectively. It provides a seamless trading experience with real-time market data and intuitive trading tools.
+This is a platform offering services for conducting cryptocurrency trading in a safe and protected environment. The platform offers a user-friendly interface, making it easy for both beginners and experienced traders to navigate and execute trades effectively. It provides a seamless trading experience with real-time market data and intuitive trading tools.
 
 ## Important
 
